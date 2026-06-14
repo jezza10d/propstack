@@ -174,7 +174,7 @@
 
 
 
-        <section class="mt-20">
+<section class="mt-20">
     <h3 class="font-label-mono text-xs text-outline uppercase tracking-[0.2em] mb-8">Active Lab Logs</h3>
     <div id="lab-logs-container" class="flex flex-col border-t border-outline-variant/15">
         <div class="py-10 text-outline animate-pulse">Scanning repository for logs...</div>
@@ -197,17 +197,26 @@
                 return;
             }
 
-            container.innerHTML = logs.map(file => `
-                <a href="${file.name}" class="py-6 border-b border-outline-variant/15 flex items-center justify-between group">
+            container.innerHTML = logs.map(file => {
+                // Format: Capitalize first letter of the sentence, convert hyphens to spaces
+                const fileNameClean = file.name.replace('.html', '');
+                const title = fileNameClean.charAt(0).toUpperCase() + fileNameClean.slice(1).replace(/-/g, ' ');
+                
+                // Ensure the URL path is prepended with /the-lab/
+                const url = `/the-lab/${file.name}`;
+                
+                return `
+                <a href="${url}" class="py-6 border-b border-outline-variant/15 flex items-center justify-between group">
                     <div>
                         <span class="text-xs text-primary font-label-mono">${new Date(file.commit?.author?.date || Date.now()).toISOString().split('T')[0]}</span>
                         <h4 class="text-lg font-bold text-on-surface mt-1 group-hover:text-primary transition-colors">
-                            ${file.name.replace('.html', '').replace(/-/g, ' ').toUpperCase()}
+                            ${title}
                         </h4>
                     </div>
                     <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
                 </a>
-            `).join('');
+                `;
+            }).join('');
         } catch (err) {
             console.error('Failed to load logs:', err);
             container.innerHTML = '<div class="py-6 text-error">System Error: Unable to fetch logs.</div>';
@@ -215,7 +224,6 @@
     }
     loadLabLogs();
 </script>
-
         
     </main>
 
