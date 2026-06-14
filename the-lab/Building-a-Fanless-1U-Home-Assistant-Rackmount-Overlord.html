@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Building a Fanless 1U Home Assistant Rackmount Overlord // PROPSTACK /_</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script src="../header.js" defer></script>
+    <script src="../footer.js" defer></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#004395",
+                        "secondary-fixed": "#e2e2e2",
+                        "outline": "#909096",
+                        "primary-container": "#0b0f19",
+                        "surface-variant": "#2b3544",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-secondary-container": "#b4b5b5",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-secondary": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#c3c6d4",
+                        "on-tertiary-fixed": "#001a42",
+                        "surface-tint": "#c3c6d4",
+                        "surface-dim": "#091421",
+                        "on-primary": "#2c303b",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary": "#002e6a",
+                        "surface": "#091421",
+                        "primary-fixed": "#dfe2f1",
+                        "inverse-primary": "#5a5e6a",
+                        "tertiary-container": "#000e2a",
+                        "on-background": "#d9e3f6",
+                        "surface-container-low": "#121c2a",
+                        "on-primary-fixed": "#171b26",
+                        "outline-variant": "#46464c",
+                        "error-container": "#93000a",
+                        "tertiary": "#adc6ff",
+                        "surface-bright": "#303a48",
+                        "secondary-container": "#454747",
+                        "inverse-surface": "#d9e3f6",
+                        "surface-container-lowest": "#050f1c",
+                        "surface-container": "#16202e",
+                        "on-surface": "#d9e3f6",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#2b3544",
+                        "on-surface-variant": "#c6c6cc",
+                        "on-error": "#690005",
+                        "surface-container-high": "#212b39",
+                        "on-primary-fixed-variant": "#434652",
+                        "background": "#091421",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#27313f",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#2d78ec",
+                        "primary-fixed-dim": "#c3c6d4",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-primary-container": "#787b88"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "32px",
+                        "stack-gap": "24px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #091421;
+            color: #d9e3f6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::selection {
+            background-color: #adc6ff;
+            color: #000e2a;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md min-h-screen">
+
+<main-header></main-header>
+
+<main class="max-w-screen-xl mx-auto px-5 md:px-gutter py-section-gap">
+    <div class="grid grid-cols-12 gap-y-stack-gap md:gap-x-gutter">
+        
+        <article class="col-span-12 w-full">
+            
+            <div class="mb-8 reveal">
+                <span class="font-label-mono text-label-mono text-tertiary uppercase">[ THE LAB ]</span>
+                <span class="font-label-mono text-label-mono text-outline mx-2">/</span>
+                <span class="font-label-mono text-label-mono text-outline uppercase">Bare-Metal Infrastructure & Smart Systems</span>
+            </div>
+
+            <header class="mb-12 reveal">
+                <h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-6">Ditch the VM and Build a Fanless 1U Home Assistant Rackmount Overlord</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                    If you’ve ever built a homelab server or a bare-metal Home Assistant instance, you know the drill. You meticulously map out the hardware, calculate the thermal limits for a fanless chassis, and picture exactly how your automated dashboards are going to look once the system is live. Then the physical components arrive on your bench, and reality gives you a swift lesson in hardware compliance. It's a beautiful, unyielding reality.
+                </p>
+                <div class="flex items-center gap-4 mt-8 pt-8 border-t border-outline-variant/15">
+                    <div class="flex flex-col">
+                        <span class="font-label-mono text-label-mono text-on-surface">ROSS_DEVELOPMENT_02</span>
+                        <span class="font-label-mono text-label-mono text-outline uppercase">JUNE 14, 2026</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="w-full aspect-video bg-surface-container mb-12 relative overflow-hidden border border-outline-variant/20 reveal">
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-surface-container-high/40 text-center p-6">
+                    <span class="material-symbols-outlined text-tertiary text-5xl mb-3 animate-pulse">terminal</span>
+                    <span class="font-label-mono text-label-mono text-on-surface">HAOS_BARE_METAL_BOOT.MP4</span>
+                    <span class="text-xs text-outline mt-1">[Insert Video Component Here]</span>
+                </div>
+                <div class="w-full h-full bg-slate-950/20 mix-blend-overlay"></div>
+            </div>
+
+            <div class="space-y-stack-gap font-body-lg text-body-lg leading-relaxed text-on-surface/90 max-w-none">
+                
+                <section class="grid grid-cols-12 gap-y-6 md:gap-x-gutter items-start py-4 reveal">
+                    <div class="col-span-12 md:col-span-4">
+                        <h2 class="font-headline-md text-headline-md text-on-surface">The Backstory: Escaping the Synology Sandbox</h2>
+                    </div>
+                    <div class="col-span-12 md:col-span-8 space-y-4 font-body-lg">
+                        <p>
+                            For a long time, my Home Assistant setup was running inside a Virtual Machine on my Synology NAS. It did the job, but virtualization is a compromise for people who enjoy mediocrity. It comes with caveats—resource sharing, USB pass-through quirks, and the constant underlying anxiety that a heavy NAS task might lag my core automation logic.
+                        </p>
+                        <p>
+                            When you're managing a smart home ecosystem with hundreds of devices, custom dashboards, and highly complex automation scripts tracking everything from regional telemetry to real-time power metrics, a laggy VM isn't just an inconvenience; it's a structural failure. It was time to give the smart home its own dedicated space.
+                        </p>
+                        <p>
+                            Space wasn't an issue. After wrapping up a massive year-long basement refurbishment project, I ended up building a dedicated control room with a full 6ft network cabinet, leaving plenty of empty U-space in the rack waiting to be filled.
+                        </p>
+                        <p>
+                            The goal for this build was strict: it had to be entirely fanless while maintaining aggressive passive cooling. Because the control room is tied directly into the home’s MVHR (Mechanical Ventilation with Heat Recovery) extraction system, I can pull any ambient warmth generated by the rack and recycle it right back into the house. No noisy server fans required—just clean, passive heat recovery. It's efficient, silent, and intellectually superior.
+                        </p>
+                    </div>
+                </section>
+
+                <hr class="border-outline-variant/15 my-8" />
+
+                <section class="grid grid-cols-12 gap-y-6 md:gap-x-gutter items-start py-4 reveal">
+                    <div class="col-span-12 md:col-span-4">
+                        <h2 class="font-headline-md text-headline-md text-on-surface">Phase 1: The Design, The Market Panic, and The Industrial Overkill</h2>
+                        <p class="text-sm text-outline mt-2 font-body-md">Designing a completely fanless, rackmountable powerhouse isn't as straightforward as picking parts out of a consumer catalog.</p>
+                    </div>
+                    
+                    <div class="col-span-12 md:col-span-8 space-y-6">
+                        <p>
+                            Is an i5 Thin-ITX build absolute overkill for a smart home hub? Without a doubt. The whole project is completely, hilariously overpowered for what it's doing today, but I wanted serious headroom to grow into over the next decade. To be clear: this will never be an AI server—local LLMs and heavy computer vision will eventually live on their own dedicated hardware down the line. This machine is built to be a bulletproof, ultra-stable traffic controller for core network infrastructure.
+                        </p>
+
+                        <h3 class="font-label-mono text-label-mono text-tertiary uppercase mt-6 mb-2">[ SYSTEM_BENTO_METRICS ]</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-6 bg-surface-container-low border border-outline-variant/20 rounded">
+                                <span class="material-symbols-outlined text-tertiary mb-2">layers</span>
+                                <div class="font-label-mono text-xs text-outline uppercase mb-1">Chassis</div>
+                                <div class="text-on-surface font-semibold text-lg">Akasa Galileo MK2</div>
+                                <div class="text-xs text-on-surface-variant mt-1">1U Fanless Rackmount Case</div>
+                            </div>
+                            <div class="p-6 bg-surface-container-low border border-outline-variant/20 rounded">
+                                <span class="material-symbols-outlined text-tertiary mb-2">developer_board</span>
+                                <div class="font-label-mono text-xs text-outline uppercase mb-1">Motherboard</div>
+                                <div class="text-on-surface font-semibold text-lg">Kontron K3831-H</div>
+                                <div class="text-xs text-on-surface-variant mt-1">Thin-ITX Industrial Board</div>
+                            </div>
+                            <div class="p-6 bg-surface-container-low border border-outline-variant/20 rounded">
+                                <span class="material-symbols-outlined text-tertiary mb-2">memory</span>
+                                <div class="font-label-mono text-xs text-outline uppercase mb-1">Processor</div>
+                                <div class="text-on-surface font-semibold text-lg">Intel Core i5-14500T</div>
+                                <div class="text-xs text-on-surface-variant mt-1">14th Gen Low-Power SKU</div>
+                            </div>
+                            <div class="p-6 bg-surface-container-low border border-outline-variant/20 rounded md:col-span-2">
+                                <span class="material-symbols-outlined text-tertiary mb-2">album</span>
+                                <div class="font-label-mono text-xs text-outline uppercase mb-1">Storage Array</div>
+                                <div class="text-on-surface font-semibold text-lg">Kingston NVMe SSD</div>
+                                <div class="text-xs text-on-surface-variant mt-1">Pivoted to industrial stability over volatile high-speed alternatives.</div>
+                            </div>
+                            <div class="p-6 bg-surface-container-low border border-outline-variant/20 rounded">
+                                <span class="material-symbols-outlined text-tertiary mb-2">settings_input_antenna</span>
+                                <div class="font-label-mono text-xs text-outline uppercase mb-1">Radio Engine</div>
+                                <div class="text-on-surface font-semibold text-lg">Intel AX210 Wireless</div>
+                                <div class="text-xs text-on-surface-variant mt-1">Handling Bluetooth tracking arrays.</div>
+                            </div>
+                        </div>
+
+                        <p class="mt-4">
+                            But getting the design from paper to the rack turned into a high-stakes experiment.
+                        </p>
+                        <p>
+                            My first major misstep was ordering a high-performance, notoriously volatile SSD. While the drive was blindingly fast on paper, its aggressive power states and extreme thermal spikes simply wouldn't balance with the strict, conservative power delivery of the industrial Kontron board. It was a mismatch made in hardware hell.
+                        </p>
+                        
+                        <blockquote class="border-l-2 border-error bg-error-container/10 p-4 font-body-md text-on-surface/90">
+                            <strong>Market Disruption Warning:</strong> While troubleshooting the volatile drive and second-guessing my component balancing, semiconductor and memory chip prices started spiking in real time. Watching tickers and component costs tick upward day by day while sitting on an incomplete build adds a special kind of pressure. I ended up cutting my losses on the volatile drive and pivoting to a rock-solid, predictable Kingston NVMe SSD—paying the premium to secure the rest of the silicon before the market completely detached from reality.
+                        </blockquote>
+
+                        <p>
+                            Once the dust settled on the market chaos, everything went smoothly with the physical assembly—until I hit a double wall: a classic industrial-to-consumer cable mismatch on the front ports, followed by the specific hurdle of flashing a dedicated Home Assistant Operating System (HAOS) onto an x86 internal NVMe drive.
+                        </p>
+                    </div>
+                </section>
+
+                <hr class="border-outline-variant/15 my-8" />
+
+                <section class="grid grid-cols-12 gap-y-6 md:gap-x-gutter items-start py-4 reveal">
+                    <div class="col-span-12 md:col-span-4">
+                        <h2 class="font-headline-md text-headline-md text-on-surface">Phase 2: The 2.0mm vs. 2.54mm Internal USB Mismatch</h2>
+                    </div>
+                    <div class="col-span-12 md:col-span-8 space-y-4">
+                        <p>
+                            In standard consumer tech, internal USB 2.0 headers are predictable. They are chunky, 9-pin black plastic blocks with a standard pitch of 2.54mm. The modular USB front-panel PCB inside the Akasa Galileo MK2 case (labeled A-NUC38-USB2.0) expects exactly that: a standard 9-pin interface.
+                        </p>
+                        <p>
+                            But industrial Thin-ITX boards like the Kontron play by different rules. Space is at an absolute premium. Instead of a standard consumer header, Kontron exposes a specialized, single-row 5-pin mini-header with a tiny 2.00mm pitch. If you try to mate a standard case block to those micro-pins, it physically won't fit. You can’t swap the case header easily, and you can’t change the motherboard pins. You have to swap the line in between.
+                        </p>
+                        <p>
+                            <strong>The Fix:</strong> To bridge the Akasa module to the Kontron board cleanly without stacking clunky adapters inside a tight, fanless chassis, you replace the stock line with a true <strong>Hybrid Internal USB 2.0 Cable</strong>. It requires a 10-pin/9-pin Female (2.54mm) on one end for the case module, and a 5-pin Female (2.0mm) on the other for the board.
+                        </p>
+                        <div class="bg-surface-container-high/30 border border-outline-variant/20 p-5 rounded font-label-mono text-sm space-y-1">
+                            <div class="text-tertiary uppercase font-semibold mb-2">[ ⚠️ WIRING MATRIX WARNING ]</div>
+                            <div>If you ever manually pin this using individual jumper wires, you must map the lines flawlessly:</div>
+                            <div class="pt-2 text-on-surface font-semibold">Red (+5V) &rarr; White (Data-) &rarr; Green (Data+) &rarr; Black (GND)</div>
+                            <div class="text-error text-xs pt-2 font-body-md">Misaligning the power and ground on an industrial board will permanently destroy the USB controller. Don't blame me if you create an expensive brick.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-outline-variant/15 my-8" />
+
+                <section class="grid grid-cols-12 gap-y-6 md:gap-x-gutter items-start py-4 reveal">
+                    <div class="col-span-12 md:col-span-4">
+                        <h2 class="font-headline-md text-headline-md text-on-surface">Phase 3: Flashing HAOS onto Bare Metal (The Right Way)</h2>
+                    </div>
+                    <div class="col-span-12 md:col-span-8 space-y-4">
+                        <p>
+                            With the physical wiring sorted, the antennas snapped onto the Intel AX210 (the Bluetooth lead secured to the AUX port on the right side of the card for clean sensor tracking), and the power connected, it was time for the software stack.
+                        </p>
+                        <p>
+                            The goal is to run HAOS (Home Assistant Operating System) directly on the bare-metal x86 hardware. Running HAOS natively gives the system raw access to the i5’s processing power, keeps overhead at zero, and ensures storage writes to the Kingston drive are handled efficiently.
+                        </p>
+                        <p>
+                            However, you cannot simply download an installer file onto a USB stick and run a typical Windows-style wizard to target an internal NVMe drive. HAOS is distributed as a pre-baked disk image. To write that image directly onto the internal drive, we have to use an elegant workaround: loading a live Linux environment first.
+                        </p>
+
+                        <div class="bg-surface-container-lowest border border-outline-variant/20 p-6 rounded my-6 font-label-mono text-xs md:text-sm text-on-tertiary-container overflow-x-auto">
+[Main PC] ---&gt; Flash Ubuntu Live to USB Drive
+                  |
+                  v
+[New Server] -&gt; Boot Ubuntu from USB (Run in RAM)
+                  |
+                  v
+[Ubuntu Desktop] -&gt; Download HAOS Image -&gt; Flash directly onto Internal NVMe SSD
+                        </div>
+
+                        <h3 class="font-headline-md text-headline-md text-on-surface mt-6 mb-2">Step-by-Step Pipeline Execution</h3>
+                        
+                        <div class="space-y-4 font-body-lg">
+                            <div>
+                                <h4 class="font-label-mono text-label-mono text-tertiary uppercase">[ STEP 01: PREPARE THE LIVE UBUNTU USB ]</h4>
+                                <p class="text-on-surface-variant mt-1 text-base">On your primary desktop or laptop, download a tool to write raw disk images, along with a portable operating system:</p>
+                                <ul class="list-disc list-inside pl-4 text-base text-on-surface-variant space-y-1 mt-2">
+                                    <li>Download balenaEtcher (or Rufus) onto your working computer.</li>
+                                    <li>Download the standard Ubuntu Desktop ISO (a live Linux environment that can run completely out of your system's RAM).</li>
+                                    <li>Insert a spare USB flash drive, open balenaEtcher, select the Ubuntu ISO, choose your flash drive, and hit Flash!</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-2">
+                                <h4 class="font-label-mono text-label-mono text-tertiary uppercase">[ STEP 02: BOOT INTO THE LIVE ENVIRONMENT ]</h4>
+                                <p class="text-on-surface-variant mt-1 text-base">Take the freshly flashed Ubuntu USB stick and insert it into one of the working blue USB 3.0 ports on the rear I/O of the server.</p>
+                                <ul class="list-disc list-inside pl-4 text-base text-on-surface-variant space-y-1 mt-2">
+                                    <li>Connect a keyboard, mouse, and monitor, then apply power.</li>
+                                    <li>Tap F2 (or Delete) immediately on startup to drop into the Kontron UEFI BIOS.</li>
+                                    <li>Verify your hardware states: check that your CPU is making flawless contact with the fanless chassis heatsink block and that temps are stable.</li>
+                                    <li>Navigate to the Boot menu, set your USB flash drive as the primary boot target, save settings, and exit.</li>
+                                    <li>When the boot menu appears, choose <strong>"Try Ubuntu"</strong> (Do not click install). This loads a full, usable Linux desktop running entirely inside the system's RAM, leaving your internal Kingston SSD completely clean and unmounted.</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-2">
+                                <h4 class="font-label-mono text-label-mono text-tertiary uppercase">[ STEP 03: WRITE THE RAW HAOS IMAGE TO THE INTERNAL SSD ]</h4>
+                                <p class="text-on-surface-variant mt-1 text-base">Now that you are sitting at the temporary Ubuntu desktop, open the built-in Firefox browser.</p>
+                                <ul class="list-disc list-inside pl-4 text-base text-on-surface-variant space-y-1 mt-2">
+                                    <li>Head straight to the official Home Assistant documentation and grab the latest URL for the Generic x86-64 (.img.xz) Home Assistant OS image.</li>
+                                    <li>Open the Ubuntu terminal, or simply download balenaEtcher for Linux right inside your live session.</li>
+                                    <li>Fire up balenaEtcher within the temporary Ubuntu environment.</li>
+                                    <li>Select <strong>Flash from URL</strong> and paste the direct HAOS link you copied, or select the file if you downloaded it locally.</li>
+                                    <li>For the target drive, select your internal Kingston NVMe SSD (Double-check the storage size to make absolutely sure you aren't selecting your live USB stick!).</li>
+                                    <li>Click <strong>Flash!</strong> and let it write the raw operating system image directly onto the bare metal of the drive.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-outline-variant/15 my-8" />
+
+                <section class="grid grid-cols-12 gap-y-6 md:gap-x-gutter items-start py-4 reveal">
+                    <div class="col-span-12 md:col-span-4">
+                        <h2 class="font-headline-md text-headline-md text-on-surface">Phase 4: The First Cold Boot</h2>
+                    </div>
+                    <div class="col-span-12 md:col-span-8 space-y-4">
+                        <p>
+                            Once balenaEtcher completes the write cycle, shut down the system completely. Pull the Ubuntu live USB stick out of the port so the board doesn't try to boot back into Linux.
+                        </p>
+                        <p>
+                            Power the system back up. The Kontron board will initialize, scan the storage controllers, detect the native UEFI boot partitions that HAOS just laid down on the NVMe drive, and launch straight into the Home Assistant command line interface.
+                        </p>
+                        <p>
+                            Within two minutes, the terminal will print out your local network IP address. From there, you can drop back onto your main laptop, type that IP address into your browser with port <code class="font-label-mono text-tertiary bg-surface-container px-1.5 py-0.5 rounded text-sm">:8123</code>, and watch the initial provisioning screen fire up.
+                        </p>
+                        <p class="text-on-surface-variant">
+                            The server is silent, the front ports are tied in perfectly via our hybrid cable swap, and the bare-metal architecture is primed for deployment. Next up: mapping out the network segments and pulling the local MQTT broker online to manage the hundreds of devices waiting for their new traffic controller. Try not to mess it up.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+
+            <section class="mt-section-gap border-t border-outline-variant/30 pt-16 max-w-none reveal">
+                <div class="flex justify-between items-end mb-10">
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface">Build Log Iterations</h2>
+                    <span class="font-label-mono text-label-mono text-outline uppercase">0 CONTRIBUTIONS</span>
+                </div>
+                
+                <div class="mb-12">
+                    <div class="group relative">
+                        <textarea class="w-full bg-surface-container-low border border-outline-variant/30 p-6 font-body-md text-body-md focus:ring-1 focus:ring-tertiary focus:border-tertiary outline-none transition-all placeholder:text-outline/50" placeholder="Ask a question or share your build iteration..." rows="4"></textarea>
+                        <div class="absolute bottom-4 right-4">
+                            <button class="bg-primary text-on-primary px-6 py-2 font-label-mono text-label-mono uppercase hover:bg-on-surface transition-all">POST_ITERATION</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        
+    </div>
+</main>
+
+<main-footer></main-footer>
+
+<script>
+    // Intersection Observer implementation for smooth scroll transitions
+    document.addEventListener("DOMContentLoaded", function () {
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const rowObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(el => rowObserver.observe(el));
+    });
+</script>
+</body>
+</html>
