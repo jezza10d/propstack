@@ -6,7 +6,7 @@ class MainHeader extends HTMLElement {
                 
                 <!-- Brand Title -->
                 <div class="flex items-center gap-4">
-                    <span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background">THEPROPSTACK /_</span>
+                    <span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background" href="/">THEPROPSTACK /_</span>
                 </div>
 
                 <!-- Desktop Navigation Menu (hidden on mobile) -->
