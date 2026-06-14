@@ -4,73 +4,144 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>THE LAB | PROPSTACK /_</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
     <script src="header.js" defer></script>
     <script src="footer.js" defer></script>
-</head>
 
-<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <script id="tailwind-config">        
+        tailwind.config = {            
+            darkMode: "class",            
+            theme: {                
+                extend: {                    
+                    colors: {                        
+                        "outline": "#909096",                        
+                        "primary": "#c3c6d4",                        
+                        "surface-container": "#16202e",                        
+                        "surface-container-low": "#121c2a",                        
+                        "background": "#091421",                        
+                        "on-surface": "#d9e3f6",                        
+                        "on-surface-variant": "#c6c6cc",
+                        "tertiary": "#adc6ff",
+                        "outline-variant": "#46464c"
+                    },
+                    spacing: {                        
+                        "container-max": "1280px",                        
+                        "gutter": "32px",                        
+                        "section-gap": "80px",                        
+                        "stack-gap": "24px"                    
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #091421; color: #d9e3f6; -webkit-font-smoothing: antialiased; }
+        .bento-item { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
 
     <main-header></main-header>
 
-    <main class="max-w-container-max mx-auto px-gutter py-section-gap">
+    <main class="max-w-screen-xl mx-auto px-5 md:px-gutter py-section-gap">
         
         <section class="mb-section-gap">
-            <div class="flex flex-col gap-4 border-l-2 border-primary pl-8">
-                <div class="font-label-mono text-xs text-primary uppercase tracking-[0.2em]">[ ENVIRONMENT_CONTROL_V4.2 ]</div>
-                <h1 class="font-display-xl text-5xl md:text-6xl font-bold tracking-tighter">Infrastructure Lab</h1>
-                <p class="font-body-lg text-outline max-w-2xl">Clinical sandbox for edge engineering. Documentation of physical builds, MQTT relay orchestration, and local-first automation stacks.</p>
+            <div class="flex flex-col gap-6">
+                <span class="font-label-mono text-primary uppercase tracking-widest text-xs flex items-center gap-2">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    [LAB_ENVIRONMENT_v2026.06]
+                </span>
+                <h1 class="font-display-xl text-5xl md:text-6xl font-bold tracking-tighter text-on-surface">The Infrastructure Lab</h1>
+                <p class="font-body-lg text-lg text-outline max-w-2xl">
+                    A clinical sandbox for home automation, Unifi networking, and resilient edge compute. Documenting the iterative evolution of the PROPSTACK core.
+                </p>
             </div>
         </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-stack-gap">
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-stack-gap">
             
-            <div class="md:col-span-4 bg-surface-container-low border border-outline-variant/20 p-8 flex flex-col gap-6">
-                <span class="font-label-mono text-xs text-outline uppercase tracking-widest">Global Node Status</span>
+            <div class="bento-item col-span-12 md:col-span-8 p-8 flex flex-col gap-6 group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="font-label-mono text-xs text-outline">PROJECT_01</span>
+                        <h2 class="text-2xl font-bold text-on-surface">Home Assistant & Logic</h2>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="font-label-mono text-[10px] bg-surface-container px-2 py-1 rounded text-tertiary">MQTT</span>
+                        <span class="font-label-mono text-[10px] bg-surface-container px-2 py-1 rounded text-tertiary">SHELLY</span>
+                    </div>
+                </div>
+                <div class="h-64 bg-surface-container rounded overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/jezza10d/propstack/main/assets/Lab.png" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                </div>
+                <p class="text-outline">Local-first automation sequences. Bridging disparate hardware protocols into a unified, secure dashboard.</p>
+            </div>
+
+            <div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col gap-6">
+                <span class="font-label-mono text-xs text-outline">// SYSTEM_TELEMETRY</span>
                 <div class="space-y-4">
-                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
-                        <span class="text-sm font-medium">Shelly Relay Mesh</span>
-                        <span class="text-tertiary font-mono text-sm">24/24 ONLINE</span>
+                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                        <span class="font-label-mono text-xs">UPLINK</span>
+                        <span class="text-tertiary text-xs">OPTIMAL</span>
                     </div>
-                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
-                        <span class="text-sm font-medium">MQTT Broker</span>
-                        <span class="text-tertiary font-mono text-sm">LATENCY: 4ms</span>
+                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                        <span class="font-label-mono text-xs">ACTIVE_NODES</span>
+                        <span class="text-primary text-xs">24/24</span>
                     </div>
-                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
-                        <span class="text-sm font-medium">Edge Compute</span>
-                        <span class="text-tertiary font-mono text-sm">34°C / NOMINAL</span>
+                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                        <span class="font-label-mono text-xs">SECURITY</span>
+                        <span class="text-primary text-xs">mTLS_ENABLED</span>
                     </div>
                 </div>
             </div>
 
-            <div class="md:col-span-8 bg-surface-container-low border border-outline-variant/20 overflow-hidden flex flex-col group">
-                <div class="h-64 bg-surface-container relative">
-                    <img src="https://raw.githubusercontent.com/jezza10d/propstack/main/assets/Lab.png" alt="Lab Hardware" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-700">
+            <div class="bento-item col-span-12 md:col-span-12 p-8 flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1 space-y-4">
+                    <span class="font-label-mono text-xs text-outline">PROJECT_02</span>
+                    <h2 class="text-2xl font-bold">Unifi Edge Topology</h2>
+                    <p class="text-outline">Deep-dive into VLAN segmentation and firewall rules to secure the home lab environment against external threats.</p>
                 </div>
-                <div class="p-8">
-                    <span class="font-label-mono text-xs text-primary uppercase block mb-2">[PROJECT_01] Bare-Metal Relay Control</span>
-                    <h2 class="text-2xl font-bold mb-4">Shelly Pro Integration Log</h2>
-                    <p class="text-outline">Deep dive into local Zigbee/MQTT relay integration for high-density residential automation. Focus on zero-cloud latency.</p>
+                <div class="bg-background border border-outline-variant/20 p-4 font-mono text-xs text-tertiary rounded w-full md:w-1/2">
+                    <pre># VLAN_10: TRUSTED
+# VLAN_20: IOT_ISOLATED
+# VLAN_30: GUEST_RESTRICTED</pre>
                 </div>
             </div>
+        </section>
 
-            <div class="md:col-span-12 bg-surface-container-lowest border border-outline-variant/20 p-8 grid md:grid-cols-2 gap-8">
-                <div class="flex flex-col justify-center">
-                    <h3 class="text-xl font-bold mb-4">Edge Infrastructure Config</h3>
-                    <p class="text-outline text-sm">Every lab log includes the raw configuration state. Reproducible, documented, and resilient.</p>
-                </div>
-                <div class="font-mono text-xs bg-[#050f1c] p-6 border-l-2 border-tertiary text-tertiary overflow-x-auto">
-                    <pre><code># Shelly Pro configuration via MQTT
-shelly_01:
-  platform: mqtt
-  state_topic: "shellies/relay01/status"
-  command_topic: "shellies/relay01/set"
-  qos: 1
-  retain: true</code></pre>
-                </div>
+        <section class="mt-section-gap">
+            <h3 class="font-label-mono text-outline mb-8 uppercase tracking-widest text-xs">Active Logs</h3>
+            <div class="flex flex-col border-t border-outline-variant/20">
+                <article class="py-6 border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors cursor-pointer">
+                    <h4 class="font-bold text-on-surface">Shelly Relay Optimization Strategy</h4>
+                    <span class="font-label-mono text-xs text-outline">2026.06.10</span>
+                </article>
+                <article class="py-6 border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors cursor-pointer">
+                    <h4 class="font-bold text-on-surface">Unifi Controller Migration to Docker</h4>
+                    <span class="font-label-mono text-xs text-outline">2026.05.22</span>
+                </article>
             </div>
-        </div>
+        </section>
     </main>
 
     <main-footer></main-footer>
+
+    <script>
+        // Scroll Animation Script
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('section, article').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
