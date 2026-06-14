@@ -8,108 +8,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
-    <script src="header.js" defer></script>
-    <script src="footer.js" defer></script>
+    <script src="../header.js" defer></script>
+    <script src="../footer.js" defer></script>
 
     <script id="tailwind-config">        
         tailwind.config = {            
             darkMode: "class",            
             theme: {                
                 extend: {                    
-                    "colors": {                        
-                        "on-secondary-fixed-variant": "#454747",                        
-                        "outline": "#909096",                        
-                        "error": "#ffb4ab",                        
-                        "tertiary-fixed-dim": "#adc6ff",                        
-                        "on-secondary-container": "#b4b5b5",                        
-                        "on-primary-fixed": "#171b26",                        
-                        "inverse-primary": "#5a5e6a",                        
-                        "surface-container-lowest": "#050f1c",                        
-                        "secondary-fixed": "#e2e2e2",                        
-                        "primary": "#c3c6d4",                        
-                        "primary-fixed": "#dfe2f1",                        
-                        "surface-bright": "#303a48",                        
-                        "surface-container-highest": "#2b3544",                        
-                        "secondary-container": "#454747",                        
-                        "on-secondary-fixed": "#1a1c1c",                        
-                        "tertiary": "#adc6ff",                        
-                        "on-error": "#690005",                        
-                        "surface-container": "#16202e",                        
-                        "on-primary": "#2c303b",                        
-                        "on-tertiary-fixed": "#001a42",                        
-                        "surface-container-high": "#212b39",                        
-                        "surface-variant": "#2b3544",                        
-                        "on-background": "#d9e3f6",                        
-                        "surface-container-low": "#121c2a",                        
-                        "background": "#091421",                        
-                        "primary-fixed-dim": "#c3c6d4",                        
-                        "primary-container": "#0b0f19",                        
-                        "error-container": "#93000a",                        
-                        "on-tertiary-fixed-variant": "#004395",                        
-                        "outline-variant": "#46464c",                        
-                        "inverse-surface": "#d9e3f6",                        
-                        "on-primary-container": "#787b88",                        
-                        "surface": "#091421",                        
-                        "on-primary-fixed-variant": "#434652",                        
-                        "secondary-fixed-dim": "#c6c6c7",                        
-                        "on-tertiary": "#002e6a",                        
-                        "surface-dim": "#091421",                        
-                        "tertiary-fixed": "#d8e2ff",                        
-                        "on-tertiary-container": "#2d78ec",                        
-                        "secondary": "#c6c6c7",                        
-                        "surface-tint": "#c3c6d4",                        
-                        "tertiary-container": "#000e2a",                        
-                        "on-secondary": "#2f3131",                        
-                        "on-error-container": "#ffdad6",                        
-                        "on-surface": "#d9e3f6",                        
-                        "on-surface-variant": "#c6c6cc",                        
-                        "inverse-on-surface": "#27313f"                    
+                    colors: {                        
+                        "primary": "#c3c6d4",
+                        "on-primary": "#2c303b",
+                        "secondary": "#c6c6c7",
+                        "tertiary": "#adc6ff",
+                        "surface": "#091421",
+                        "surface-container": "#16202e",
+                        "surface-container-low": "#121c2a",
+                        "surface-container-high": "#212b39",
+                        "on-surface": "#d9e3f6",
+                        "on-surface-variant": "#c6c6cc",
+                        "outline": "#909096",
+                        "outline-variant": "#46464c",
+                        "background": "#091421"
+                    },
+                    spacing: {                        
+                        "container-max": "1280px",                        
+                        "gutter": "32px",                        
+                        "section-gap": "80px",                        
+                        "stack-gap": "24px"
                     }
-                }            
-            }        
-        }    
+                }
+            }
+        }
     </script>
+    <style>
+        body { background-color: #091421; color: #d9e3f6; }
+        .bento-item { background: #121c2a; border: 1px solid rgba(144, 144, 150, 0.15); }
+    </style>
 </head>
-<body class="bg-background text-on-background antialiased">
+<body class="font-body-md text-body-md overflow-x-hidden">
 
     <main-header></main-header>
 
-    <main class="max-w-container-max mx-auto px-5 md:px-gutter py-20">
+    <main class="max-w-screen-xl mx-auto px-5 md:px-gutter py-16 md:py-24">
         
-        <section class="mb-20">
-            <h1 class="font-bold text-5xl md:text-6xl tracking-tighter mb-6">The Infrastructure Lab</h1>
-            <p class="text-outline text-lg max-w-2xl">Clinical sandbox for home automation and networking experiments.</p>
+        <section class="mb-section-gap">
+            <div class="flex flex-col gap-4">
+                <div class="font-label-mono text-xs text-primary uppercase tracking-widest flex items-center gap-2">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    [ LAB_ENVIRONMENT_v4.2 ]
+                </div>
+                <h1 class="font-bold text-4xl md:text-6xl tracking-tighter text-on-surface">The Infrastructure Lab</h1>
+                <p class="font-body-lg text-outline max-w-2xl">A clinical sandbox for physical builds, automated systems, and high-density networking. Documentation for the persistent evolution of the PROPSTACK core.</p>
+            </div>
         </section>
 
-        <div class="grid grid-cols-12 gap-6">
-            <div class="col-span-12 lg:col-span-8 bg-surface-container-low border border-outline-variant/20 p-8 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">Bare-Metal Orchestration</h2>
-                <p class="text-outline">Resilient, low-latency automation controllers.</p>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-stack-gap">
+            
+            <div class="bento-item col-span-12 md:col-span-8 p-8 flex flex-col gap-6">
+                <span class="font-label-mono text-xs text-outline">PROJECT_01 // HARDWARE</span>
+                <h2 class="text-3xl font-bold text-on-surface">Automated Hidden Door</h2>
+                <div class="h-64 bg-surface-container rounded-lg overflow-hidden border border-outline-variant/30">
+                     <img src="https://raw.githubusercontent.com/jezza10d/propstack/main/assets/Lab.png" class="w-full h-full object-cover opacity-60" alt="Lab Project">
+                </div>
+                <p class="text-outline">Implementation of a low-latency magnetic latch system integrated with local Zigbee sensors. Hardware-level reliability for physical asset security.</p>
+                <a href="#" class="text-primary font-label-mono uppercase hover:underline">Read the Build Journey</a>
             </div>
-            <div class="col-span-12 lg:col-span-4 bg-surface-container-low border border-outline-variant/20 p-8 rounded-lg">
-                <h3 class="text-lg font-bold mb-4">Telemetry</h3>
-                <div class="text-primary font-mono">14 Nodes Active</div>
+
+            <div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col gap-6">
+                <span class="font-label-mono text-xs text-outline">STATUS_PANEL</span>
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-between border-b border-outline-variant/15 pb-4">
+                        <span class="text-sm">Lab Uplink</span>
+                        <span class="text-tertiary font-mono">OPTIMAL</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/15 pb-4">
+                        <span class="text-sm">Nodes Active</span>
+                        <span class="text-tertiary font-mono">14/14</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col gap-4">
+                <span class="font-label-mono text-xs text-outline">PROJECT_02</span>
+                <h2 class="text-xl font-bold">1U Server Assembly</h2>
+                <p class="text-sm text-outline">Custom short-depth 1U build optimized for thermal efficiency.</p>
+            </div>
+
+            <div class="bento-item col-span-12 md:col-span-8 p-8 grid md:grid-cols-2 gap-8">
+                <div>
+                    <span class="font-label-mono text-xs text-outline">PROJECT_03</span>
+                    <h2 class="text-xl font-bold mt-2">Edge Node Cluster V3</h2>
+                    <p class="text-sm text-outline mt-4">Distributed sensor network with local LLM inference.</p>
+                </div>
+                <div class="bg-background p-4 rounded border-l-2 border-tertiary font-mono text-xs overflow-x-auto text-tertiary">
+                    <code>services: { inference: "active" }</code>
+                </div>
             </div>
         </div>
+
     </main>
 
     <main-footer></main-footer>
 
     <script>
-        // Standardized animation logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-4');
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('section, .grid > div').forEach(el => {
-                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
-                observer.observe(el);
+        // IntersectionObserver for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
             });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.bento-item, section').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(el);
         });
     </script>
 </body>
