@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
-    <script src="header.js"></script>
-    <script src="footer.js"></script>
+    <script src="header.js" defer></script>
+    <script src="footer.js" defer></script>
 
     <script id="tailwind-config">
         tailwind.config = {
@@ -64,19 +64,40 @@
         </section>
 
         <div class="bento-grid">
+            <div class="bento-item col-span-12 md:col-span-8 p-8 flex flex-col justify-between group">
+                <div class="flex flex-col gap-6">
+                    <div class="flex justify-between items-start">
+                        <div class="flex flex-col">
+                            <span class="font-label-mono text-label-mono text-outline mb-1">PROJECT_01</span>
+                            <h2 class="font-headline-lg text-headline-lg">Automated Hidden Door</h2>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Implementation of a low-latency magnetic latch system integrated with local Zigbee sensors.
+                    </p>
+                </div>
             </div>
+
+            <div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col gap-6">
+                <span class="font-label-mono text-label-mono text-outline">STATUS_PANEL</span>
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-4">
+                        <span class="font-label-mono text-label-mono uppercase">Lab Uplink</span>
+                        <span class="text-tertiary font-label-mono text-label-mono">OPTIMAL_99.9%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <main-footer></main-footer>
 
     <script>
-        // Intersection Observer for Animations
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-4');
                     }
                 });
             }, { threshold: 0.1 });
