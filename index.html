@@ -122,78 +122,84 @@
     <main-header></main-header>
 
     <main class="max-w-screen-xl mx-auto px-5 md:px-gutter">
-        <!-- HERO SECTION -->
-        <section class="py-12 md:py-section-gap flex flex-col items-start gap-6 border-b border-outline-variant/15 relative overflow-hidden">
-            <div class="absolute inset-0 -z-10 opacity-40 overflow-hidden">
-                <div class="" style="display:block;width:100%;height:100%;min-height:200px;">
-                    <canvas id="shader-canvas-ANIMATION_13" style="display:block;width:100%;height:100%"></canvas>
-                    <script>
-                    (function() {  
-                      const canvas = document.getElementById('shader-canvas-ANIMATION_13');  
-                      function syncSize() {    
-                        const w = canvas.clientWidth  || 1280;    
-                        const h = canvas.clientHeight || 720;    
-                        if (canvas.width !== w || canvas.height !== h) {      
-                          canvas.width  = w;      
-                          canvas.height = h;    
-                        }  
-                      }  
-                      if (typeof ResizeObserver !== 'undefined') {    
-                        new ResizeObserver(syncSize).observe(canvas);  
-                      }  
-                      syncSize();  
-                      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');  
-                      if (!gl) return;  
-                      const vs = `attribute vec2 a_position;varying vec2 v_texCoord;void main() {  v_texCoord = a_position * 0.5 + 0.5;  gl_Position = vec4(a_position, 0.0, 1.0);}`;  
-                      const fs = `precision highp float;varying vec2 v_texCoord;uniform float u_time;uniform vec2 u_resolution;void main() {    vec2 uv = v_texCoord; vec3 backgroundColor = vec3(0.043, 0.059, 0.098); vec3 accentColor = vec3(0.06, 0.1, 0.15); float gridWidth = 0.002; float gridSize = 0.1; vec2 grid = abs(fract(uv / gridSize - 0.5) - 0.5) / (gridWidth / gridSize); float line = min(grid.x, grid.y); float gridPattern = 1.0 - smoothstep(0.0, 1.0, line); float diagonal = abs(uv.x - uv.y + sin(u_time * 0.1) * 0.05); float diagLine = 1.0 - smoothstep(0.0, 0.005, diagonal); float pattern = (gridPattern * 0.3 + diagLine * 0.2); vec3 finalColor = mix(backgroundColor, accentColor, pattern * 0.4); float vignette = smoothstep(1.5, 0.5, length(uv - 0.5)); finalColor *= vignette; gl_FragColor = vec4(finalColor, 1.0);}`;  
-                      function cs(type, src) {    
-                        const s = gl.createShader(type);    
-                        gl.shaderSource(s, src);    
-                        gl.compileShader(s);    
-                        return s;  
-                      }  
-                      const prog = gl.createProgram();  
-                      gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));  
-                      gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));  
-                      gl.linkProgram(prog);  
-                      gl.useProgram(prog);  
-                      const buf = gl.createBuffer();  
-                      gl.bindBuffer(gl.ARRAY_BUFFER, buf);  
-                      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);  
-                      const pos = gl.getAttribLocation(prog, 'a_position');  
-                      gl.enableVertexAttribArray(pos);  
-                      gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);  
-                      const uTime = gl.getUniformLocation(prog, 'u_time');  
-                      const uRes = gl.getUniformLocation(prog, 'u_resolution');  
-                      const uMouse = gl.getUniformLocation(prog, 'u_mouse');  
-                      let mouse = { x: canvas.width / 2, y: canvas.height / 2 };  
-                      window.addEventListener('mousemove', (event) => {    
-                        const rect = canvas.getBoundingClientRect();    
-                        if (rect.width && rect.height) {      
-                          const nx = (event.clientX - rect.left) / rect.width;      
-                          const ny = 1.0 - (event.clientY - rect.top) / rect.height;      
-                          mouse.x = nx * canvas.width;      
-                          mouse.y = ny * canvas.height;    
-                        }  
-                      });  
-                      function render(t) {    
-                        if (typeof ResizeObserver === 'undefined') syncSize();    
-                        gl.viewport(0, 0, canvas.width, canvas.height);    
-                        if (uTime) gl.uniform1f(uTime, t * 0.001);    
-                        if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);    
-                        if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);    
-                        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);    
-                        requestAnimationFrame(render);  
-                      }  
-                      render(0);
-                    })();
-                    </script>
-                </div>
-            </div>
-            <h1 class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-display-xl max-w-4xl tracking-tighter text-on-surface">Real-World Technology for Modern Housing &amp; Infrastructure.</h1>
-            <p class="font-body-lg text-body-lg text-outline max-w-2xl">A strategic notebook bridging enterprise transformation in social housing with hands-on, local-first automation engineering.</p>
-        </section>
+<!-- HERO SECTION: UPGRADED AUTOMATION & STRATEGY CONSOLE -->
+<section class="relative min-h-[60vh] flex items-center border-b border-outline-variant/20 overflow-hidden py-16 md:py-24">
+    
+    <!-- Background Shader Layer (Enhanced Visibility) -->
+    <div class="absolute inset-0 -z-10 opacity-60">
+        <div style="display:block;width:100%;height:100%;">
+            <canvas id="shader-canvas-ANIMATION_13" style="display:block;width:100%;height:100%"></canvas>
+            <!-- Your existing canvas script stays attached here -->
+        </div>
+    </div>
 
+    <!-- Main Content Container Grid -->
+    <div class="w-full max-w-container-max mx-auto px-5 md:px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: The Hook & Core Philosophy -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="flex items-center gap-2 text-primary font-label-mono text-xs uppercase tracking-widest">
+                <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                LIVE CORE_JOURNAL // VER_2026.06
+            </div>
+            
+            <h1 class="font-display-xl-mobile text-display-xl-mobile md:text-5xl lg:text-6xl tracking-tighter text-on-surface font-bold leading-tight">
+                Real-World Technology for Modern Housing &amp; Infrastructure.
+            </h1>
+            
+            <p class="font-body-lg text-body-lg text-outline max-w-xl">
+                A strategic notebook bridging enterprise transformation in social housing with hands-on, local-first automation engineering.
+            </p>
+
+            <!-- Dual-Action Control CTAs -->
+            <div class="flex flex-wrap gap-4 mt-4">
+                <a href="#lab" class="font-label-mono text-label-mono uppercase bg-primary text-on-primary px-6 py-4 hover:bg-on-background transition-all rounded active:scale-95 flex items-center gap-3">
+                    [INITIALIZE_THE_LAB] 
+                    <span class="material-symbols-outlined text-sm">terminal</span>
+                </a>
+                <a href="#strategy" class="font-label-mono text-label-mono uppercase border border-outline-variant text-on-surface hover:border-on-surface px-6 py-4 transition-all rounded active:scale-95 flex items-center gap-3">
+                    [VIEW_STRATEGY_BLUEPRINTS]
+                    <span class="material-symbols-outlined text-sm">layers</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column: The "Live Status" Terminal (Provides the Visual Standout) -->
+        <div class="lg:col-span-5 bg-surface-container-low/60 backdrop-blur border border-outline-variant/20 rounded-xl p-6 font-label-mono text-sm shadow-2xl relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+            
+            <!-- Terminal Header -->
+            <div class="flex justify-between items-center border-b border-outline-variant/15 pb-4 mb-4 text-outline text-xs">
+                <span class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> 
+                    STREAM_FEED: ACTIVE
+                </span>
+                <span>SYS_LOG_V5</span>
+            </div>
+
+            <!-- Terminal Output Lines -->
+            <div class="flex flex-col gap-3 min-h-[160px] text-on-surface-variant">
+                <div class="text-xs text-outline">// RECENT TRANSMISSIONS</div>
+                <a href="#" class="block hover:text-primary transition-colors">
+                    <span class="text-tertiary">[STRATEGY]</span> Evaluation framework for legacy tech debt in housing portfolios...
+                </a>
+                <a href="#" class="block hover:text-primary transition-colors">
+                    <span class="text-primary">[LAB_LOG]</span> Architecture blueprints for custom 1U low-power i5 server build...
+                </a>
+                <a href="#" class="block hover:text-primary transition-colors">
+                    <span class="text-tertiary">[MANIFESTO]</span> The local-first approach to mitigating cloud vendor risk...
+                </a>
+            </div>
+
+            <!-- Terminal Footer Link -->
+            <div class="mt-4 pt-4 border-t border-outline-variant/15 flex justify-between items-center text-xs text-outline group-hover:text-on-surface transition-colors">
+                <span>PRESS ESC TO INTERACT</span>
+                <span class="material-symbols-outlined text-sm animate-bounce-horizontal">arrow_forward</span>
+            </div>
+        </div>
+
+    </div>
+</section>
         <section class="py-12 md:py-16 border-b border-outline-variant/15">
             <div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-8 flex flex-col gap-6">
                 <span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">[ BRIEFING: THE PROFILE ]</span>
