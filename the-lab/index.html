@@ -11,41 +11,13 @@
     <script src="header.js" defer></script>
     <script src="footer.js" defer></script>
 
-    <script id="tailwind-config">        
-        tailwind.config = {            
-            darkMode: "class",            
-            theme: {                
-                extend: {                    
-                    colors: {                        
-                        "outline": "#909096",                        
-                        "primary": "#c3c6d4",                        
-                        "surface-container": "#16202e",                        
-                        "surface-container-low": "#121c2a",                        
-                        "background": "#091421",                        
-                        "on-surface": "#d9e3f6",                        
-                        "on-surface-variant": "#c6c6cc",                        
-                        "tertiary": "#adc6ff",                        
-                        "outline-variant": "#46464c"                    
-                    },                    
-                    spacing: {                        
-                        "container-max": "1280px",                        
-                        "gutter": "32px",                        
-                        "section-gap": "80px",                        
-                        "stack-gap": "24px"                    
-                    },
-                    fontFamily: {
-                        "display-xl": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "label-mono": ["JetBrains Mono"]
-                    }
-                }            
-            }        
-        }    
+    <script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#909096", "primary": "#c3c6d4", "surface-container": "#16202e", "surface-container-low": "#121c2a", "background": "#091421", "on-surface": "#d9e3f6", "on-surface-variant": "#c6c6cc", "tertiary": "#adc6ff", "outline-variant": "#46464c" }, "spacing": { "container-max": "1280px", "gutter": "32px", "section-gap": "80px", "stack-gap": "24px" } } } }
     </script>
-    <style>        
-        body { background-color: #091421; color: #d9e3f6; -webkit-font-smoothing: antialiased; }
-        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
-        .bento-item { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); }
+    <style>
+        body { background-color: #091421; color: #d9e3f6; }
+        .bento-card { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); transition: border-color 0.3s; }
+        .bento-card:hover { border-color: rgba(195, 198, 212, 0.3); }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden">
@@ -56,77 +28,52 @@
         
         <section class="mb-section-gap">
             <div class="font-label-mono text-tertiary uppercase tracking-widest mb-4">[ LAB_ENVIRONMENT_v4.2 ]</div>
-            <h1 class="font-display-xl text-5xl md:text-6xl font-bold tracking-tighter text-on-surface mb-6">
-                The Infrastructure Lab
-            </h1>
+            <h1 class="font-display-xl text-5xl md:text-6xl font-bold tracking-tighter text-on-surface mb-6">The Infrastructure Lab</h1>
             <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
-                A clinical sandbox for physical builds, automated systems, and high-density networking experiments. Documentation for the persistent evolution of the PROPSTACK core.
+                A clinical sandbox for physical builds, automated systems, and high-density networking. From Shelly relays to UniFi clusters, we document the evolution of the PROPSTACK core.
             </p>
         </section>
 
-        <div class="bento-grid">
-            <div class="bento-item col-span-12 lg:col-span-8 p-8 flex flex-col justify-between min-h-[300px]">
-                <span class="font-label-mono text-outline uppercase tracking-wider text-xs">Primary Objective</span>
-                <div>
-                    <h2 class="text-2xl font-bold mb-4">Bare-Metal Orchestration</h2>
-                    <p class="text-outline">Developing resilient, low-latency home automation controllers using Zigbee, MQTT, and local-first execution patterns to ensure 100% uptime regardless of WAN availability.</p>
-                </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-section-gap">
+            <div class="bento-card col-span-12 lg:col-span-8 p-8 flex flex-col justify-between">
+                <span class="font-label-mono text-outline text-xs uppercase mb-4">[ FEATURED // SHELLY ]</span>
+                <h2 class="text-3xl font-bold mb-4">Automated Hidden Door</h2>
+                <p class="text-outline mb-6">Low-latency magnetic latch integration with Zigbee sensors. Reliability meets stealth.</p>
+                <button class="w-fit border border-outline px-6 py-3 font-label-mono text-xs uppercase hover:bg-on-surface hover:text-background transition-all">[ READ THE JOURNEY ]</button>
             </div>
-
-            <div class="bento-item col-span-12 lg:col-span-4 p-8 flex flex-col gap-6">
-                <span class="font-label-mono text-outline uppercase tracking-wider text-xs">Telemetry_Stream</span>
-                <div class="flex flex-col gap-4">
-                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
-                        <span class="text-on-surface-variant">Active Nodes</span>
-                        <span class="text-tertiary font-mono">14</span>
-                    </div>
-                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
-                        <span class="text-on-surface-variant">Uplink Health</span>
-                        <span class="text-tertiary font-mono">99.9%</span>
-                    </div>
-                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
-                        <span class="text-on-surface-variant">Service Load</span>
-                        <span class="text-tertiary font-mono">LOW</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bento-item col-span-12 p-8">
-                <span class="font-label-mono text-outline uppercase tracking-wider text-xs mb-6 block">Latest Lab Transmissions</span>
-                <div class="space-y-6">
-                    <article class="flex items-center gap-6 group cursor-pointer">
-                        <div class="w-2 h-2 bg-tertiary rounded-full"></div>
-                        <div>
-                            <h4 class="font-bold group-hover:text-tertiary transition-colors">Custom 1U Rack Enclosure Build</h4>
-                            <p class="text-sm text-outline">Refining thermal dissipation strategies for passive-cooled server hardware.</p>
-                        </div>
-                    </article>
-                    <article class="flex items-center gap-6 group cursor-pointer">
-                        <div class="w-2 h-2 bg-primary rounded-full"></div>
-                        <div>
-                            <h4 class="font-bold group-hover:text-primary transition-colors">Magnetic Latch Automation</h4>
-                            <p class="text-sm text-outline">Integrating hardware-level sensor feedback with existing security logic.</p>
-                        </div>
-                    </article>
+            <div class="bento-card col-span-12 lg:col-span-4 p-8 flex flex-col gap-4">
+                <span class="font-label-mono text-outline text-xs uppercase">Filter_Logs</span>
+                <input type="text" id="labSearch" placeholder="SEARCH LAB LOGS..." class="bg-surface-container border-none p-4 text-sm font-label-mono focus:ring-1 focus:ring-primary w-full">
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-surface-container px-3 py-1 text-[10px] font-label-mono cursor-pointer hover:bg-primary hover:text-background">#SHELLY</span>
+                    <span class="bg-surface-container px-3 py-1 text-[10px] font-label-mono cursor-pointer hover:bg-primary hover:text-background">#UNIFI</span>
+                    <span class="bg-surface-container px-3 py-1 text-[10px] font-label-mono cursor-pointer hover:bg-primary hover:text-background">#NETWORKING</span>
                 </div>
             </div>
         </div>
+
+        <section>
+            <h3 class="font-headline-md text-2xl mb-8">Latest Transmissions</h3>
+            <div id="logList" class="flex flex-col border-t border-outline-variant/15">
+                <article class="py-8 border-b border-outline-variant/15 flex justify-between items-center group cursor-pointer">
+                    <div>
+                        <span class="font-label-mono text-xs text-tertiary">[NETWORKING]</span>
+                        <h4 class="text-xl font-bold mt-2">UniFi v8 Controller Migration Strategy</h4>
+                    </div>
+                    <span class="material-symbols-outlined text-outline group-hover:text-primary">arrow_forward</span>
+                </article>
+            </div>
+        </section>
     </main>
 
     <main-footer></main-footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.bento-item, section').forEach(el => {
-                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
-                observer.observe(el);
+        // Simple client-side filter
+        document.getElementById('labSearch').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('#logList article').forEach(el => {
+                el.style.display = el.textContent.toLowerCase().includes(term) ? 'flex' : 'none';
             });
         });
     </script>
