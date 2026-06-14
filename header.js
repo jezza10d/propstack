@@ -15,8 +15,8 @@ class MainHeader extends HTMLElement {
                 </div>
 
                 <nav class="hidden md:flex gap-8 items-center">
-                    <a class="font-label-mono text-label-mono uppercase ${isActive('/blueprints')} hover:text-on-surface transition-colors" href="/blueprints">Blueprints</a>
                     <a class="font-label-mono text-label-mono uppercase ${isActive('/the-lab')} hover:text-on-surface transition-colors" href="/the-lab">The Lab</a>
+                    <a class="font-label-mono text-label-mono uppercase ${isActive('/blueprints')} hover:text-on-surface transition-colors" href="/blueprints">Blueprints</a>
                     <a class="font-label-mono text-label-mono uppercase ${isActive('/scorecard')} hover:text-on-surface transition-colors" href="/scorecard">Software Scorecard</a>
                     <a class="font-label-mono text-label-mono uppercase ${isActive('/ethos')} hover:text-on-surface transition-colors" href="/ethos">Ethos</a>
                 </nav>
@@ -40,8 +40,8 @@ class MainHeader extends HTMLElement {
                             <button id="menu-close" class="material-symbols-outlined text-outline hover:text-on-surface cursor-pointer select-none">close</button>
                         </div>
                         <nav class="flex flex-col gap-4">
-                            <a class="group flex items-center justify-between font-label-mono text-base uppercase ${isActive('/blueprints')} hover:text-on-surface py-2 border-b border-outline-variant/5 transition-colors" href="/blueprints">Blueprints <span class="material-symbols-outlined text-sm">chevron_right</span></a>
                             <a class="group flex items-center justify-between font-label-mono text-base uppercase ${isActive('/the-lab')} hover:text-on-surface py-2 border-b border-outline-variant/5 transition-colors" href="/the-lab">The Lab <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+                            <a class="group flex items-center justify-between font-label-mono text-base uppercase ${isActive('/blueprints')} hover:text-on-surface py-2 border-b border-outline-variant/5 transition-colors" href="/blueprints">Blueprints <span class="material-symbols-outlined text-sm">chevron_right</span></a>
                             <a class="group flex items-center justify-between font-label-mono text-base uppercase ${isActive('/scorecard')} hover:text-on-surface py-2 border-b border-outline-variant/5 transition-colors" href="/scorecard">Software Scorecard <span class="material-symbols-outlined text-sm">chevron_right</span></a>
                             <a class="group flex items-center justify-between font-label-mono text-base uppercase ${isActive('/ethos')} hover:text-on-surface py-2 border-b border-outline-variant/5 transition-colors" href="/ethos">Ethos <span class="material-symbols-outlined text-sm">chevron_right</span></a>
                         </nav>
