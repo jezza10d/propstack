@@ -12,7 +12,7 @@ class MainHeader extends HTMLElement {
                 <!-- Desktop Navigation Menu (hidden on mobile) -->
                 <nav class="hidden md:flex gap-8 items-center">
                     <a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="/blueprints">Blueprints</a>
-                    <a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="/lab">The Lab</a>
+                    <a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="/the-lab">The Lab</a>
                     <a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="/scorecard">Software Scorecard</a>
                     <a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="/ethos">Ethos</a>
                 </nav>
