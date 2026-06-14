@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>THE LAB | PROPSTACK /_</title>
+    <title>THE LAB | THEPROPSTACK /_</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -21,17 +21,14 @@
                         "primary": "#c3c6d4",
                         "surface-container": "#16202e",
                         "surface-container-high": "#212b39",
-                        "surface-container-lowest": "#050f1c",
                         "background": "#091421",
                         "on-surface": "#d9e3f6",
-                        "on-surface-variant": "#c6c6cc",
                         "tertiary": "#adc6ff",
                         "outline-variant": "#46464c"
                     },
                     spacing: {
                         "container-max": "1280px",
                         "gutter": "32px",
-                        "stack-gap": "24px",
                         "section-gap": "80px"
                     }
                 }
@@ -39,11 +36,10 @@
         }
     </script>
     <style>
-        body { background-color: #091421; color: #d9e3f6; scroll-behavior: smooth; }
+        body { background-color: #091421; color: #d9e3f6; }
         .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
-        .bento-item { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .bento-item { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); transition: all 0.3s; }
         .bento-item:hover { border-color: rgba(144, 144, 150, 0.4); background: #121c2a; }
-        .code-block { font-family: 'JetBrains Mono', monospace; background: #050f1c; border-left: 2px solid #adc6ff; }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden">
@@ -52,40 +48,20 @@
 
     <main class="max-w-container-max mx-auto px-gutter py-section-gap">
         <section class="mb-section-gap">
-            <div class="flex flex-col gap-4">
-                <div class="font-label-mono text-tertiary uppercase tracking-widest">[ LAB_ENVIRONMENT_v4.2 ]</div>
-                <h1 class="font-display-xl text-display-xl max-w-4xl leading-tight font-bold">
-                    The Infrastructure Lab: <span class="text-outline">Iterative, Hands-On Edge Engineering.</span>
-                </h1>
-                <p class="font-body-lg text-on-surface-variant max-w-2xl mt-4">
-                    A clinical sandbox for physical builds, automated systems, and high-density networking experiments. Documentation for the persistent evolution of the PROPSTACK core.
-                </p>
-            </div>
+            <h1 class="font-display-xl text-5xl font-bold tracking-tighter">The Infrastructure Lab</h1>
+            <p class="text-on-surface-variant max-w-2xl mt-6 text-lg">
+                High-fidelity edge engineering, home automation, and network topology documentation.
+            </p>
         </section>
 
         <div class="bento-grid">
-            <div class="bento-item col-span-12 md:col-span-8 p-8 flex flex-col justify-between group">
-                <div class="flex flex-col gap-6">
-                    <div class="flex justify-between items-start">
-                        <div class="flex flex-col">
-                            <span class="font-label-mono text-label-mono text-outline mb-1">PROJECT_01</span>
-                            <h2 class="font-headline-lg text-headline-lg">Automated Hidden Door</h2>
-                        </div>
-                    </div>
-                    <p class="font-body-md text-body-md text-on-surface-variant">
-                        Implementation of a low-latency magnetic latch system integrated with local Zigbee sensors.
-                    </p>
-                </div>
+            <div class="bento-item col-span-12 md:col-span-8 p-8">
+                <h2 class="font-headline-lg mb-4">Core Lab Services</h2>
+                <p class="text-outline">Overview of currently active hardware and automation controllers.</p>
             </div>
-
-            <div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col gap-6">
-                <span class="font-label-mono text-label-mono text-outline">STATUS_PANEL</span>
-                <div class="flex flex-col gap-4">
-                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-4">
-                        <span class="font-label-mono text-label-mono uppercase">Lab Uplink</span>
-                        <span class="text-tertiary font-label-mono text-label-mono">OPTIMAL_99.9%</span>
-                    </div>
-                </div>
+            <div class="bento-item col-span-12 md:col-span-4 p-8">
+                <h2 class="font-headline-md mb-4">System Telemetry</h2>
+                <div class="text-tertiary font-label-mono">OPTIMAL_99.9%</div>
             </div>
         </div>
     </main>
@@ -93,6 +69,7 @@
     <main-footer></main-footer>
 
     <script>
+        // Trigger scroll animations
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -101,7 +78,7 @@
                     }
                 });
             }, { threshold: 0.1 });
-            document.querySelectorAll('article, section > div, section > h2, .bento-item').forEach(el => {
+            document.querySelectorAll('section, .bento-item').forEach(el => {
                 el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
                 observer.observe(el);
             });
