@@ -201,38 +201,65 @@
     </div>
 </section>
 
-        <!-- REWRITTEN PROFILE SECTION: HOME-FIRST COVERSOVER -->
-<section class="py-12 md:py-16 border-b border-outline-variant/15">
-    <div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
-        <!-- Glow Accent Effect -->
-        <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+<!-- REFACTOR: SYSTEM PROFILE CONSOLE -->
+<section class="py-10 md:py-14 border-b border-outline-variant/15">
+    <div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6 md:p-8 relative overflow-hidden">
         
-        <span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm">terminal</span> [ THE_MANIFOLD_LOG: INITIAL_INIT ]
-        </span>
+        <!-- Top Console Header -->
+        <div class="flex justify-between items-center border-b border-outline-variant/15 pb-4 mb-6">
+            <span class="font-label-mono text-xs text-tertiary uppercase tracking-wider flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">terminal</span> [PROPSTACK_MISSION_MANIFESTO]
+            </span>
+            <span class="font-label-mono text-[10px] text-outline-variant uppercase">SYS_INIT_OK</span>
+        </div>
         
-        <div class="flex flex-col gap-4 relative z-10">
-            <h2 class="font-headline-md text-headline-md md:text-3xl font-bold text-on-surface tracking-tight">
-                Hey, I’m Ross. I build houses that think, code solutions that scale, and push hardware to its absolute limits.
-            </h2>
+        <!-- Two-Column Layout Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <p class="font-body-md text-body-md text-outline max-w-4xl leading-relaxed">
-                By day, I look after <strong class="text-on-surface font-medium">Technology, Data, Software, Development, and Change</strong> for a large Housing Association. By night, I channel that exact same enterprise engine into my house. My passion is engineering an automated home environment that fluidly wraps around daily life—packed with slick, custom configurations—without breaking the bank. I love proving that high-end smart infrastructure doesn't have to carry a premium price tag.
-            </p>
-            
-            <p class="font-body-md text-body-md text-outline max-w-4xl leading-relaxed">
-                My approach is rooted in an aggressive crossover between the office and the edge. I constantly experiment: building prototypes dirt cheap, testing out-there ideas, and then "enterprising it up" with rigorous frameworks like <strong class="text-primary font-medium">Secure-by-Design</strong> topology. Whether I’m navigating corporate transformation or deploying a local-first MQTT smart relay cluster, I believe true success comes from working iteratively and taking people on the journey with you—whether that's an entire organization of stakeholders, or at home where new code has to clear the ultimate barrier: <strong class="text-on-surface italic">the Wife Approval Factor.</strong>
-            </p>
+            <!-- Left Column: Punchy, Minimal Text -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+                <h2 class="font-display-sm text-2xl md:text-3xl font-bold text-on-surface tracking-tight leading-tight">
+                    Bridging enterprise architecture with local-first home engineering.
+                </h2>
+                <p class="font-body-md text-sm md:text-base text-outline leading-relaxed">
+                    This notebook explores how to build a smart home infrastructure that fluidly adapts to daily life—without breaking the bank. The core philosophy centers on a massive crossover: prototyping cheap, experimenting aggressively, and then upgrading to enterprise-grade execution using <span class="text-primary font-medium font-label-mono text-xs bg-primary/5 px-1.5 py-0.5 rounded">SECURE_BY_DESIGN</span> topologies.
+                </p>
+                <p class="font-body-md text-sm md:text-base text-outline leading-relaxed">
+                    True digital transformation requires an iterative approach that brings people along on the journey—whether managing <strong class="text-on-surface font-medium">Technology, Data, Software, Development, and Change</strong> for thousands of social housing properties, or introducing raw automation code at home that has to clear the ultimate barrier: <span class="text-on-surface italic">the Partner Approval Factor</span>.
+                </p>
+            </div>
+
+            <!-- Right Column: Structured Architecture Specs (The Visual Weight) -->
+            <div class="lg:col-span-5 flex flex-col gap-3 bg-background/50 border border-outline-variant/10 rounded-lg p-4 font-label-mono text-xs text-on-surface-variant">
+                <div class="text-outline text-[10px] uppercase tracking-wider pb-2 border-b border-outline-variant/10">// CROSSOVER METRICS</div>
+                
+                <div class="flex justify-between py-1 border-b border-outline-variant/5">
+                    <span class="text-outline">DAY_SCOPE:</span>
+                    <span class="text-on-surface font-medium text-right">Tech, Data, Software &amp; Change</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-outline-variant/5">
+                    <span class="text-outline">NIGHT_SCOPE:</span>
+                    <span class="text-on-surface font-medium">Bare-Metal Home Labs</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-outline-variant/5">
+                    <span class="text-outline">PARADIGM:</span>
+                    <span class="text-tertiary">Prototype Cheap / Enterprise Up</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-outline-variant/5">
+                    <span class="text-outline">CORE_FLOW:</span>
+                    <span class="text-primary">Iterative Deployment</span>
+                </div>
+                <div class="flex justify-between py-1">
+                    <span class="text-outline">COMPLIANCE:</span>
+                    <span class="text-on-surface italic">Partner Approved</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Inline Micro-Metrics Footer -->
-        <div class="flex flex-wrap gap-x-8 gap-y-2 border-t border-outline-variant/10 pt-4 mt-2 text-xs font-label-mono text-outline-variant">
-            <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-primary">code</span> STACK: LOCAL_FIRST</div>
-            <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-primary">verified_user</span> PRINCIPLE: SECURE_BY_DESIGN</div>
-            <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-primary">favorite</span> CORE_STATUS: ITERATING</div>
-        </div>
     </div>
 </section>
+        
+        
         <!-- TWO-PATH NAVIGATION -->
         <section class="py-12 md:py-20 flex flex-col gap-4 border-b border-outline-variant/15">
             <a class="group relative overflow-hidden bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4 transition-all hover:bg-surface-container-high active:scale-[0.99]" href="#">
