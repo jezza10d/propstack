@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>The Hidden Portal: Automated Stone Wall Door // PROPSTACK /_</title>
+    <title>The Hidden Portal: Automated Stone Wall Engineering // PROPSTACK /_</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- UNIVERSAL REUSABLE COMPONENTS -->
+
+    <!-- REUSABLE COMPONENTS -->
     <script src="header.js" defer></script>
     <script src="footer.js" defer></script>
-
+    
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -125,20 +125,18 @@
 </head>
 <body class="font-body-md text-body-md min-h-screen">
 
-<!-- UNIVERSAL HEADER COMPONENT -->
+<!-- GLOBAL DYNAMIC HEADER COMPONENT -->
 <main-header></main-header>
 
 <main class="py-section-gap">
     <article class="article-container px-margin-mobile md:px-0">
         
-        <!-- Breadcrumb / Category -->
         <div class="mb-8">
             <span class="font-label-mono text-label-mono text-tertiary uppercase">[ THE LAB ]</span>
             <span class="font-label-mono text-label-mono text-outline mx-2">/</span>
             <span class="font-label-mono text-label-mono text-outline uppercase">Edge Infrastructure & Automation</span>
         </div>
 
-        <!-- Narrative Header -->
         <header class="mb-12">
             <h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-6">Engineering a Concealed Automated Stone Wall Door.</h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
@@ -152,7 +150,6 @@
             </div>
         </header>
 
-        <!-- Main Video / Hero Embed Placeholder -->
         <div class="w-full aspect-video bg-surface-container mb-12 relative overflow-hidden border border-outline-variant/20">
             <div class="absolute inset-0 flex flex-col items-center justify-center bg-surface-container-high/40 text-center p-6">
                 <span class="material-symbols-outlined text-tertiary text-5xl mb-3 animate-pulse">play_circle</span>
@@ -162,7 +159,6 @@
             <div class="w-full h-full bg-slate-950/20 mix-blend-overlay"></div>
         </div>
 
-        <!-- Narrative Body -->
         <div class="space-y-stack-gap font-body-lg text-body-lg leading-relaxed text-on-surface/90">
             <p>
                 Building high-end smart infrastructure on a sensible budget means getting your hands dirty with raw physics before you even touch a terminal. The challenge here was deceptively simple but structurally brutal: build a fully concealed swing door seamless with a rugged exterior stone veneer wall, and automate it so it operates via local-first API triggers without tearing its own hinges apart.
@@ -176,7 +172,6 @@
                 For the cladding face of the door itself, normal plywood or plasterboard was out of the question due to damp resistance and structural rigidity requirements. Instead, I deployed a high-density <strong>concrete backer board</strong>. This provided an inflexible, non-porous canvas capable of bonding perfectly with mortar while dealing gracefully with the dynamic torque of mechanical operations.
             </p>
 
-            <!-- Gallery Section for photos -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
                 <div class="aspect-square bg-surface-container border border-outline-variant/20 relative flex items-center justify-center">
                     <div class="text-center p-4">
@@ -205,7 +200,6 @@
                 The Shelly Uni is ideal here because of its tiny footprint and clean dry-contact execution. Powered directly by the opener's internal DC accessory rail, it allows me to monitor the door's state inputs while providing clear MQTT trigger arrays to bridge structural access with my home server architecture.
             </p>
 
-            <!-- Code Block / Blueprint Configuration -->
             <div class="my-10 bg-surface-container-lowest border border-outline-variant/20 overflow-hidden">
                 <div class="flex justify-between items-center px-4 py-2 bg-surface-container border-b border-outline-variant/20">
                     <span class="font-label-mono text-label-mono text-outline">// mqtt_door_trigger.json</span>
@@ -229,7 +223,7 @@
     <span class="text-outline">"encryption":</span> "mTLS",
     <span class="text-outline">"network_isolation":</span> "vlan_10_strict"
   }
-<span class="text-outline}</span></pre>
+<span class="text-outline">}</span></pre>
                 </div>
             </div>
 
@@ -238,14 +232,12 @@
             </p>
         </div>
 
-        <!-- Community & Comments Section -->
         <section class="mt-section-gap border-t border-outline-variant/30 pt-16">
             <div class="flex justify-between items-end mb-10">
                 <h2 class="font-headline-lg text-headline-lg text-on-surface">Build Log Iterations</h2>
                 <span class="font-label-mono text-label-mono text-outline uppercase">3 CONTRIBUTIONS</span>
             </div>
             
-            <!-- Input Field -->
             <div class="mb-12">
                 <div class="group relative">
                     <textarea class="w-full bg-surface-container-low border border-outline-variant/30 p-6 font-body-md text-body-md focus:ring-1 focus:ring-tertiary focus:border-tertiary outline-none transition-all placeholder:text-outline/50" placeholder="Ask a question or share your build iteration..." rows="4"></textarea>
@@ -255,9 +247,7 @@
                 </div>
             </div>
 
-            <!-- Comment Thread -->
             <div class="space-y-0 border-b border-outline-variant/15">
-                <!-- Comment 1 -->
                 <div class="py-8 border-t border-outline-variant/15 flex gap-6 group hover:bg-surface-container-lowest/30 transition-colors px-4 -mx-4">
                     <div class="w-10 h-10 bg-surface-container-highest flex-shrink-0 flex items-center justify-center border border-outline-variant/20">
                         <span class="material-symbols-outlined text-outline">hardware</span>
@@ -282,7 +272,6 @@
                     </div>
                 </div>
 
-                <!-- Threaded Reply -->
                 <div class="py-8 border-t border-outline-variant/15 flex gap-6 pl-12 group hover:bg-surface-container-lowest/30 transition-colors px-4 -mx-4">
                     <div class="w-10 h-10 bg-tertiary-container flex-shrink-0 flex items-center justify-center border border-tertiary/20">
                         <span class="material-symbols-outlined text-tertiary">architecture</span>
@@ -311,8 +300,8 @@
     </article>
 </main>
 
-<!-- UNIVERSAL FOOTER COMPONENT -->
-<main-footer></main-footer>
+    <!-- GLOBAL DYNAMIC FOOTER COMPONENT -->
+    <main-footer></main-footer>
 
 <script>
     function copyCode(button) {
