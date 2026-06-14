@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>THE LAB | THEPROPSTACK /_</title>
+    <title>THE LAB | PROPSTACK /_</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
-    <script src="header.js" defer></script>
-    <script src="footer.js" defer></script>
+    <script src="../header.js" defer></script>
+    <script src="../footer.js" defer></script>
 
     <script id="tailwind-config">
         tailwind.config = {
@@ -20,16 +20,18 @@
                         "outline": "#909096",
                         "primary": "#c3c6d4",
                         "surface-container": "#16202e",
-                        "surface-container-high": "#212b39",
+                        "surface-container-low": "#121c2a",
                         "background": "#091421",
                         "on-surface": "#d9e3f6",
+                        "on-surface-variant": "#c6c6cc",
                         "tertiary": "#adc6ff",
                         "outline-variant": "#46464c"
                     },
                     spacing: {
                         "container-max": "1280px",
                         "gutter": "32px",
-                        "section-gap": "80px"
+                        "section-gap": "80px",
+                        "stack-gap": "24px"
                     }
                 }
             }
@@ -38,8 +40,7 @@
     <style>
         body { background-color: #091421; color: #d9e3f6; }
         .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
-        .bento-item { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); transition: all 0.3s; }
-        .bento-item:hover { border-color: rgba(144, 144, 150, 0.4); background: #121c2a; }
+        .bento-item { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden">
@@ -47,21 +48,62 @@
     <main-header></main-header>
 
     <main class="max-w-container-max mx-auto px-gutter py-section-gap">
+        
         <section class="mb-section-gap">
-            <h1 class="font-display-xl text-5xl font-bold tracking-tighter">The Infrastructure Lab</h1>
-            <p class="text-on-surface-variant max-w-2xl mt-6 text-lg">
-                High-fidelity edge engineering, home automation, and network topology documentation.
+            <div class="font-label-mono text-tertiary uppercase tracking-widest mb-4">[ LAB_ENVIRONMENT_v4.2 ]</div>
+            <h1 class="font-display-xl text-5xl md:text-6xl font-bold tracking-tighter text-on-surface mb-6">
+                The Infrastructure Lab
+            </h1>
+            <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                A clinical sandbox for physical builds, automated systems, and high-density networking experiments. Documentation for the persistent evolution of the PROPSTACK core.
             </p>
         </section>
 
         <div class="bento-grid">
-            <div class="bento-item col-span-12 md:col-span-8 p-8">
-                <h2 class="font-headline-lg mb-4">Core Lab Services</h2>
-                <p class="text-outline">Overview of currently active hardware and automation controllers.</p>
+            <div class="bento-item col-span-12 lg:col-span-8 p-8 flex flex-col justify-between min-h-[300px]">
+                <span class="font-label-mono text-outline uppercase tracking-wider text-xs">Primary Objective</span>
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">Bare-Metal Orchestration</h2>
+                    <p class="text-outline">Developing resilient, low-latency home automation controllers using Zigbee, MQTT, and local-first execution patterns to ensure 100% uptime regardless of WAN availability.</p>
+                </div>
             </div>
-            <div class="bento-item col-span-12 md:col-span-4 p-8">
-                <h2 class="font-headline-md mb-4">System Telemetry</h2>
-                <div class="text-tertiary font-label-mono">OPTIMAL_99.9%</div>
+
+            <div class="bento-item col-span-12 lg:col-span-4 p-8 flex flex-col gap-6">
+                <span class="font-label-mono text-outline uppercase tracking-wider text-xs">Telemetry_Stream</span>
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                        <span class="text-on-surface-variant">Active Nodes</span>
+                        <span class="text-tertiary font-mono">14</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                        <span class="text-on-surface-variant">Uplink Health</span>
+                        <span class="text-tertiary font-mono">99.9%</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                        <span class="text-on-surface-variant">Service Load</span>
+                        <span class="text-tertiary font-mono">LOW</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item col-span-12 p-8">
+                <span class="font-label-mono text-outline uppercase tracking-wider text-xs mb-6 block">Latest Lab Transmissions</span>
+                <div class="space-y-6">
+                    <article class="flex items-center gap-6 group cursor-pointer">
+                        <div class="w-2 h-2 bg-tertiary rounded-full"></div>
+                        <div>
+                            <h4 class="font-bold group-hover:text-tertiary transition-colors">Custom 1U Rack Enclosure Build</h4>
+                            <p class="text-sm text-outline">Refining thermal dissipation strategies for passive-cooled server hardware.</p>
+                        </div>
+                    </article>
+                    <article class="flex items-center gap-6 group cursor-pointer">
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        <div>
+                            <h4 class="font-bold group-hover:text-primary transition-colors">Magnetic Latch Automation</h4>
+                            <p class="text-sm text-outline">Integrating hardware-level sensor feedback with existing security logic.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </main>
@@ -69,7 +111,6 @@
     <main-footer></main-footer>
 
     <script>
-        // Trigger scroll animations
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -78,7 +119,7 @@
                     }
                 });
             }, { threshold: 0.1 });
-            document.querySelectorAll('section, .bento-item').forEach(el => {
+            document.querySelectorAll('.bento-item, section').forEach(el => {
                 el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
                 observer.observe(el);
             });
