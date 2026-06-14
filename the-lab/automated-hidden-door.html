@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-    <!-- REUSABLE COMPONENTS -->
     <script src="header.js" defer></script>
     <script src="footer.js" defer></script>
     
@@ -125,11 +124,10 @@
 </head>
 <body class="font-body-md text-body-md min-h-screen">
 
-<!-- GLOBAL DYNAMIC HEADER COMPONENT -->
 <main-header></main-header>
 
-<main class="py-section-gap">
-    <article class="article-container px-margin-mobile md:px-0">
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap">
+    <article class="article-container mx-auto">
         
         <div class="mb-8">
             <span class="font-label-mono text-label-mono text-tertiary uppercase">[ THE LAB ]</span>
@@ -209,7 +207,7 @@
                     </button>
                 </div>
                 <div class="p-6 overflow-x-auto">
-<pre class="font-label-mono text-label-mono leading-relaxed text-on-tertiary-container"><span class="text-outline">{</span>
+                    <pre class="font-label-mono text-label-mono leading-relaxed text-on-tertiary-container"><span class="text-outline">{</span>
   <span class="text-outline">"device_id":</span> "shelly_uni_hidden_door_01",
   <span class="text-outline">"relay_0":</span> {
     <span class="text-outline">"name":</span> "olide_trigger_pulse",
@@ -300,8 +298,7 @@
     </article>
 </main>
 
-    <!-- GLOBAL DYNAMIC FOOTER COMPONENT -->
-    <main-footer></main-footer>
+<main-footer></main-footer>
 
 <script>
     function copyCode(button) {
