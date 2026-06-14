@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PROPSTACK /_ | Technology Journal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#454747",
+                        "outline": "#909096",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-primary-fixed": "#171b26",
+                        "inverse-primary": "#5a5e6a",
+                        "surface-container-lowest": "#050f1c",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary": "#c3c6d4",
+                        "primary-fixed": "#dfe2f1",
+                        "surface-bright": "#303a48",
+                        "surface-container-highest": "#2b3544",
+                        "secondary-container": "#454747",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "tertiary": "#adc6ff",
+                        "on-error": "#690005",
+                        "surface-container": "#16202e",
+                        "on-primary": "#2c303b",
+                        "on-tertiary-fixed": "#001a42",
+                        "surface-container-high": "#212b39",
+                        "surface-variant": "#2b3544",
+                        "on-background": "#d9e3f6",
+                        "surface-container-low": "#121c2a",
+                        "background": "#091421",
+                        "primary-fixed-dim": "#c3c6d4",
+                        "primary-container": "#0b0f19",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "outline-variant": "#46464c",
+                        "inverse-surface": "#d9e3f6",
+                        "on-primary-container": "#787b88",
+                        "surface": "#091421",
+                        "on-primary-fixed-variant": "#434652",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#002e6a",
+                        "surface-dim": "#091421",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-tertiary-container": "#2d78ec",
+                        "secondary": "#c6c6c7",
+                        "surface-tint": "#c3c6d4",
+                        "tertiary-container": "#000e2a",
+                        "on-secondary": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#d9e3f6",
+                        "on-surface-variant": "#c6c6cc",
+                        "inverse-on-surface": "#27313f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "32px",
+                        "section-gap": "80px",
+                        "stack-gap": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "caption": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "display-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #091421;
+            color: #d9e3f6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .divider-bottom {
+            border-bottom: 1px solid rgba(70, 70, 76, 0.15);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TOP APP BAR -->
+<header class="bg-background dark:bg-background docked full-width top-0 sticky z-50 border-b border-outline-variant/15 h-20 transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center w-full px-5 md:px-gutter max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background">PROPSTACK /_</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center"><a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Blueprints</a><a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">The Lab</a><a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Software Scorecard</a><a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Ethos</a></nav>
+<button class="font-label-mono text-label-mono uppercase bg-primary text-on-primary px-4 py-2 hover:bg-on-background transition-colors">[SYSTEM_LOGIN]</button>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-5 md:px-gutter">
+<!-- HERO SECTION -->
+<section class="py-12 md:py-section-gap flex flex-col items-start gap-6 border-b border-outline-variant/15 relative overflow-hidden"><div class="absolute inset-0 -z-10 opacity-40 overflow-hidden"><!-- STITCH_SHADER_START:ANIMATION_13 class="" -->
+<div class="" style="display:block;width:100%;height:100%;min-height:200px;">
+<canvas id="shader-canvas-ANIMATION_13" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_13');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Base color: deep corporate slate #0B0F19
+    vec3 backgroundColor = vec3(0.043, 0.059, 0.098);
+    // Subtle accent color: dark teal/slate
+    vec3 accentColor = vec3(0.06, 0.1, 0.15);
+    
+    // Create a subtle geometric grid/blueprint pattern
+    float gridWidth = 0.002;
+    float gridSize = 0.1;
+    
+    vec2 grid = abs(fract(uv / gridSize - 0.5) - 0.5) / (gridWidth / gridSize);
+    float line = min(grid.x, grid.y);
+    float gridPattern = 1.0 - smoothstep(0.0, 1.0, line);
+    
+    // Add some organic architectural "blueprint" lines
+    float diagonal = abs(uv.x - uv.y + sin(u_time * 0.1) * 0.05);
+    float diagLine = 1.0 - smoothstep(0.0, 0.005, diagonal);
+    
+    // Combine and fade
+    float pattern = (gridPattern * 0.3 + diagLine * 0.2);
+    vec3 finalColor = mix(backgroundColor, accentColor, pattern * 0.4);
+    
+    // Vignette for depth
+    float vignette = smoothstep(1.5, 0.5, length(uv - 0.5));
+    finalColor *= vignette;
+
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_13 --></div>
+<h1 class="font-display-xl-mobile text-display-xl-mobile md:font-display-xl md:text-display-xl max-w-4xl tracking-tighter text-on-surface">
+                Real-World Technology for Modern Housing &amp; Infrastructure.
+            </h1>
+<p class="font-body-lg text-body-lg text-outline max-w-2xl">
+                A strategic notebook bridging enterprise transformation in social housing with hands-on, local-first automation engineering.
+            </p>
+</section><section class="py-12 md:py-16 border-b border-outline-variant/15">
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-8 flex flex-col gap-6">
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">[ BRIEFING: THE PROFILE ]</span>
+<div class="flex flex-col gap-4">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">
+                Written by a Director of Technology &amp; Business Transformation within the UK housing sector.
+            </h2>
+<p class="font-body-md text-body-md text-outline max-w-4xl">
+                By day, I govern enterprise strategy, manage legacy tech debt, and guide digital culture shifts for thousands of properties. By night, I apply that exact same enterprise discipline to my bare-metal home lab—engineering local-first automation, custom 1U rack servers, and secure network topologies. This notebook is the intersection of macro corporate governance and micro edge-engineering.
+            </p>
+</div>
+</div>
+</section>
+<!-- TWO-PATH NAVIGATION -->
+<section class="py-12 md:py-20 flex flex-col gap-4 border-b border-outline-variant/15">
+<a class="group relative overflow-hidden bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4 transition-all hover:bg-surface-container-high active:scale-[0.99]" href="#"><div class="w-full h-32 overflow-hidden rounded-lg mb-2">https://lh3.googleusercontent.com/aida-public/AB6AXuC9RiQa__l7wiTCHAkLD8ucu4VmjNw5Dod0ECwvEcSgAFs5DIBTlIA8mR5E6M3JyqdnbrteV0FubrLdExy9_XmGQtW-AeVTOFAjHAgbmHuLJxfvfFYLgYSC2V15ByJ2_JtTBklIRS3tare_DEz03K-1Jp5cVWM6pD7XQrRJvnnWYA2-4CPkxgBk9C7BuJuQZkUJ9rLlAq6--kyUjHiIwpMtaTUlzervp7M8utqubm7HuzYsbgG715kB0dd91KBafmLriGVJGD25znA</div>
+<div class="flex justify-between items-start">
+<span class="font-label-mono text-label-mono text-tertiary uppercase">[STRATEGY]</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Browse Housing Association Blueprints</h2>
+<p class="font-body-md text-body-md text-outline">Non-technical strategic guides on digital culture, vendor procurement, and driving organizational change.</p>
+</div>
+</a>
+<a class="group relative overflow-hidden bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4 transition-all hover:bg-surface-container-high active:scale-[0.99]" href="#"><div class="w-full h-32 overflow-hidden rounded-lg mb-2">https://lh3.googleusercontent.com/aida-public/AB6AXuCrSMWgRG8Ld6NV8TMcqGKHuc-7scibPuGSXADJ7CnQYDO356ahJpMHMPldm4xiPzeR5VG6cdxHky9oSOYhaVCYY40qX8nnO4Cs7onIbb1GjX_mv7OCyXWEEtnEWlg0S2l1uKU73Z9nRm2YTVBJngiAhPoTKKz5Gp9midIujmWDqRsj7KQvzc3q3W0_y7UnRO3lH1Ll6uXIjQ9xrwrC2dN3GuyAXRTiJyqSorraL500CmIiUHPSlMd-Ki8YNaKZ0Vd2imr4ifo-c-4</div>
+<div class="flex justify-between items-start">
+<span class="font-label-mono text-label-mono text-tertiary uppercase">[THE LAB]</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Enter the Infrastructure Lab</h2>
+<p class="font-body-md text-body-md text-outline">Deep dives into hardware builds, smart home automation, and local-first networking.</p>
+</div>
+</a>
+</section>
+<!-- PROJECT SPOTLIGHT -->
+<section class="py-16 md:py-section-gap border-b border-outline-variant/15">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center transition-all duration-700 opacity-100 translate-y-0">
+<div class="md:col-span-7 flex flex-col gap-6">
+<span class="font-label-mono text-label-mono text-primary uppercase bg-primary-container px-3 py-1 w-fit">FEATURED PROJECT</span>
+<h2 class="font-headline-lg text-headline-lg md:text-5xl md:leading-tight text-on-surface">Project Focus: The Automated Hidden Door</h2>
+<p class="font-body-lg text-body-lg text-outline">
+                        How I engineered a completely hidden, automated structural door using local-first smart relays—and what it taught me about physical asset security frameworks.
+                    </p>
+<a class="group flex items-center gap-2 font-label-mono text-label-mono uppercase text-on-surface hover:text-primary transition-colors w-fit" href="#">
+                        Read the Technical Log 
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</div>
+<div class="md:col-span-5 relative aspect-square bg-surface-container-high border border-outline-variant/30 overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-crosshair" data-alt="A macro photograph of high-tech mechanical components and smart relays integrated into a dark wood structural element. The lighting is moody and technical, with focused beams highlighting the metallic textures of the actuator and wiring. The scene has a cold, engineering aesthetic with deep shadows and sharp highlights, reflecting a sophisticated local-first smart home build." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AuX0GIxfKC5dIetGaCkbvIaLw8VlR3PjKmMsdsePxaIf2H8FDM-JWx2fRyHZevsNtJY_VJlBQE_tt0qY7CscyK1ahYXACUz0NteyDnrg9dciKpwO4-OZBQEYwhhAIAu5Qzkv2Cw5PRU-kyYHboyKvtfJ5GTIchVcsDOJMWYll0d3gBSXQIdUDOza9ODJu_LxbRxPof7JMpohmZjbVhHuhQDpIqg3P3jHQIpR5uGVHJWhSJe6mQH6lIsM42iJSY6TP-mPzGEqEmc"/>
+</div>
+</div>
+</section>
+<!-- EDITORIAL STREAM -->
+<section class="py-16 md:py-section-gap">
+<div class="flex justify-between items-end mb-12 transition-all duration-700 opacity-100 translate-y-0">
+<h3 class="font-label-mono text-label-mono text-outline uppercase tracking-[0.2em]">Latest Entries</h3>
+<div class="h-[1px] flex-grow mx-8 bg-outline-variant/20 mb-2"></div>
+</div>
+<div class="flex flex-col transition-all duration-700 opacity-100 translate-y-0">
+<!-- Entry 1 -->
+<article class="group py-12 border-b border-outline-variant/15 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container-low transition-colors px-4 -mx-4 cursor-pointer transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex flex-col gap-3 max-w-2xl">
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">[STRATEGY]</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">The Local-First Manifesto</h4>
+<p class="font-body-md text-body-md text-outline">Minimizing cloud vendor risk through decentralized infrastructure at the edge of housing networks.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">navigate_next</span>
+</article>
+<!-- Entry 2 -->
+<article class="group py-12 border-b border-outline-variant/15 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container-low transition-colors px-4 -mx-4 cursor-pointer transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex flex-col gap-3 max-w-2xl">
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">[LAB LOG]</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Architecting the 1U Rack</h4>
+<p class="font-body-md text-body-md text-outline">Building custom enclosures for home-office integration with local-first MQTT protocols.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">navigate_next</span>
+</article>
+<!-- Entry 3 -->
+<article class="group py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container-low transition-colors px-4 -mx-4 cursor-pointer transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex flex-col gap-3 max-w-2xl">
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-wider">[PROCUREMENT]</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Legacy Tech Debt</h4>
+<p class="font-body-md text-body-md text-outline">A scorecard-based approach to evaluating SaaS vendor lock-in for social housing providers.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">navigate_next</span>
+</article>
+</div>
+<div class="mt-16 flex justify-center transition-all duration-700 opacity-100 translate-y-0">
+<button class="font-label-mono text-label-mono uppercase border border-outline px-10 py-4 hover:bg-on-surface hover:text-background transition-all active:scale-95">View Full Archive</button>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-background dark:bg-background border-t border-outline-variant/15 py-section-gap transition-opacity duration-200">
+<div class="max-w-container-max mx-auto px-5 md:px-gutter flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-gap">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-on-surface opacity-50 font-bold tracking-tighter">PROPSTACK /_</div>
+<p class="font-label-mono text-label-mono uppercase text-outline">© 2024 PROPSTACK /_ TECHNOLOGY JOURNAL. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-label-mono text-label-mono uppercase text-outline hover:text-on-surface transition-colors" href="#">Privacy</a>
+<a class="font-label-mono text-label-mono uppercase text-outline hover:text-on-surface transition-colors" href="#">Terms</a>
+<a class="font-label-mono text-label-mono uppercase text-primary flex items-center gap-2" href="#">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    System Status: Optimal
+                </a>
+</div>
+</div>
+</footer>
+<!-- INTERACTION SCRIPTS -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Subtle scroll reveals
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('article, section > div, section > h2').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
