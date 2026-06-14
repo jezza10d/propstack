@@ -17,110 +17,86 @@
             theme: {                
                 extend: {                    
                     "colors": {                        
+                        "on-secondary-fixed-variant": "#454747",                        
                         "outline": "#909096",                        
+                        "error": "#ffb4ab",                        
+                        "tertiary-fixed-dim": "#adc6ff",                        
+                        "on-secondary-container": "#b4b5b5",                        
+                        "on-primary-fixed": "#171b26",                        
+                        "inverse-primary": "#5a5e6a",                        
+                        "surface-container-lowest": "#050f1c",                        
+                        "secondary-fixed": "#e2e2e2",                        
                         "primary": "#c3c6d4",                        
+                        "primary-fixed": "#dfe2f1",                        
+                        "surface-bright": "#303a48",                        
+                        "surface-container-highest": "#2b3544",                        
+                        "secondary-container": "#454747",                        
+                        "on-secondary-fixed": "#1a1c1c",                        
+                        "tertiary": "#adc6ff",                        
+                        "on-error": "#690005",                        
                         "surface-container": "#16202e",                        
+                        "on-primary": "#2c303b",                        
+                        "on-tertiary-fixed": "#001a42",                        
+                        "surface-container-high": "#212b39",                        
+                        "surface-variant": "#2b3544",                        
+                        "on-background": "#d9e3f6",                        
                         "surface-container-low": "#121c2a",                        
                         "background": "#091421",                        
+                        "primary-fixed-dim": "#c3c6d4",                        
+                        "primary-container": "#0b0f19",                        
+                        "error-container": "#93000a",                        
+                        "on-tertiary-fixed-variant": "#004395",                        
+                        "outline-variant": "#46464c",                        
+                        "inverse-surface": "#d9e3f6",                        
+                        "on-primary-container": "#787b88",                        
+                        "surface": "#091421",                        
+                        "on-primary-fixed-variant": "#434652",                        
+                        "secondary-fixed-dim": "#c6c6c7",                        
+                        "on-tertiary": "#002e6a",                        
+                        "surface-dim": "#091421",                        
+                        "tertiary-fixed": "#d8e2ff",                        
+                        "on-tertiary-container": "#2d78ec",                        
+                        "secondary": "#c6c6c7",                        
+                        "surface-tint": "#c3c6d4",                        
+                        "tertiary-container": "#000e2a",                        
+                        "on-secondary": "#2f3131",                        
+                        "on-error-container": "#ffdad6",                        
                         "on-surface": "#d9e3f6",                        
                         "on-surface-variant": "#c6c6cc",                        
-                        "tertiary": "#adc6ff",                        
-                        "outline-variant": "#46464c"                    
-                    },                    
-                    "spacing": {                        
-                        "container-max": "1280px",                        
-                        "gutter": "32px",                        
-                        "section-gap": "80px",                        
-                        "stack-gap": "24px"                    
+                        "inverse-on-surface": "#27313f"                    
                     }
                 }            
             }        
         }    
     </script>
-    <style>        
-        body { background-color: #091421; color: #d9e3f6; }
-        .bento-card { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); transition: border-color 0.3s; }
-        .bento-card:hover { border-color: rgba(195, 198, 212, 0.3); }
-    </style>
 </head>
-<body class="font-body-md text-body-md overflow-x-hidden">
+<body class="bg-background text-on-background antialiased">
 
     <main-header></main-header>
 
-    <main class="max-w-container-max mx-auto px-gutter py-section-gap">
+    <main class="max-w-container-max mx-auto px-5 md:px-gutter py-20">
         
-        <section class="mb-section-gap">
-            <div class="font-label-mono text-tertiary uppercase tracking-widest mb-4">[ LAB_ENVIRONMENT_v4.2 ]</div>
-            <h1 class="font-display-xl text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-6">
-                The Infrastructure Lab: Iterative, Hands-On Edge Engineering
-            </h1>
-            <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
-                A clinical sandbox for physical builds, automated systems, and high-density networking. Documentation for the persistent evolution of the PROPSTACK core.
-            </p>
+        <section class="mb-20">
+            <h1 class="font-bold text-5xl md:text-6xl tracking-tighter mb-6">The Infrastructure Lab</h1>
+            <p class="text-outline text-lg max-w-2xl">Clinical sandbox for home automation and networking experiments.</p>
         </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-section-gap">
-            <div class="bento-card col-span-12 lg:col-span-8 p-8">
-                <div class="flex gap-2 mb-4">
-                    <span class="font-label-mono text-outline text-[10px] uppercase">[PROJECT_01]</span>
-                    <span class="font-label-mono bg-surface-container-low text-primary px-2 py-0.5 rounded text-[10px]">[SHELLY]</span>
-                </div>
-                <h2 class="text-3xl font-bold mb-4">Automated Hidden Door</h2>
-                <p class="text-outline text-sm mb-6 max-w-lg">Implementation of a low-latency magnetic latch system integrated with local Zigbee sensors. The build focus was purely on hardware-level reliability and "stealth" operation.</p>
-                <button class="border border-outline px-6 py-3 font-label-mono text-xs uppercase hover:bg-on-surface hover:text-background transition-all">[ READ THE JOURNEY ]</button>
+        <div class="grid grid-cols-12 gap-6">
+            <div class="col-span-12 lg:col-span-8 bg-surface-container-low border border-outline-variant/20 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold mb-4">Bare-Metal Orchestration</h2>
+                <p class="text-outline">Resilient, low-latency automation controllers.</p>
             </div>
-
-            <div class="bento-card col-span-12 lg:col-span-4 p-8 flex flex-col gap-6">
-                <span class="font-label-mono text-outline text-xs uppercase">STATUS_PANEL</span>
-                <div class="flex flex-col gap-4">
-                    <div class="flex justify-between border-b border-outline-variant/20 pb-2">
-                        <span class="text-outline text-sm">LAB UPLINK</span>
-                        <span class="font-label-mono text-primary text-sm">OPTIMAL_99.9%</span>
-                    </div>
-                </div>
-                <input type="text" id="labSearch" placeholder="SEARCH LAB LOGS..." class="bg-surface-container border-none p-4 text-sm font-label-mono focus:ring-1 focus:ring-primary w-full">
-            </div>
-
-            <div class="bento-card col-span-12 lg:col-span-6 p-8">
-                <h2 class="text-2xl font-bold mb-2">1U Server Assembly</h2>
-                <p class="text-outline text-sm mb-4">Custom short-depth 1U build optimized for thermal efficiency.</p>
-                <a href="#" class="text-primary text-xs font-label-mono">→ INSPECT SCHEMATICS</a>
-            </div>
-
-            <div class="bento-card col-span-12 lg:col-span-6 p-8">
-                <h2 class="text-2xl font-bold mb-4">Edge Node Cluster V3</h2>
-                <pre class="bg-surface-container-low p-4 rounded text-[10px] text-outline overflow-x-auto">
-services:
-  inference_node:
-    image: propstack/edge-v3:latest</pre>
+            <div class="col-span-12 lg:col-span-4 bg-surface-container-low border border-outline-variant/20 p-8 rounded-lg">
+                <h3 class="text-lg font-bold mb-4">Telemetry</h3>
+                <div class="text-primary font-mono">14 Nodes Active</div>
             </div>
         </div>
-
-        <section>
-            <h3 class="font-headline-md text-2xl mb-8">Active Lab Logs</h3>
-            <div id="logList" class="flex flex-col border-t border-outline-variant/15">
-                <article class="py-8 border-b border-outline-variant/15 flex justify-between items-center group cursor-pointer">
-                    <div>
-                        <span class="font-label-mono text-xs text-tertiary">[HARDWARE]</span>
-                        <h4 class="text-xl font-bold mt-2">Modular Rack-Mount Raspberry Pi 5 Blade →</h4>
-                    </div>
-                </article>
-            </div>
-        </section>
     </main>
 
     <main-footer></main-footer>
 
     <script>
-        // Log Search Functionality
-        document.getElementById('labSearch').addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            document.querySelectorAll('#logList article').forEach(el => {
-                el.style.display = el.textContent.toLowerCase().includes(term) ? 'flex' : 'none';
-            });
-        });
-
-        // Intersection Observer for Animations (from index.html)
+        // Standardized animation logic
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -130,7 +106,7 @@ services:
                     }
                 });
             }, { threshold: 0.1 });
-            document.querySelectorAll('.bento-card, section > h3, article').forEach(el => {
+            document.querySelectorAll('section, .grid > div').forEach(el => {
                 el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
                 observer.observe(el);
             });
