@@ -279,35 +279,42 @@
     </div>
 </section>
         
-<!-- THE DUAL-SECTION COMPONENT -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-
-    <!-- Section 1: The Lab (Using your custom image) -->
-    <article class="bg-surface-container rounded-2xl p-6 border border-outline-variant/20 hover:border-primary/50 transition-colors">
-        <div class="mb-6 overflow-hidden rounded-xl bg-black">
-            <img src="assets/Lab.png" alt="Internal 1U rack build and Shelly integration" class="w-full h-auto object-cover opacity-90">
+<!-- CONTENT GRID: STRATEGY VS INFRASTRUCTURE -->
+<section class="max-w-4xl mx-auto space-y-8">
+    
+    <!-- STRATEGY SECTION -->
+    <div class="group bg-[#0f172a] border border-[#1e293b] rounded-lg p-8 transition-all hover:border-[#334155]">
+        <div class="h-48 bg-[#1e293b] flex items-center justify-center text-[#475569] font-mono text-sm mb-6 rounded">
+            [STRATEGY_IMAGE_PLACEHOLDER]
         </div>
-        <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">[THE LAB]</span>
-        <h2 class="text-2xl font-bold mb-3">Bare-Metal Infrastructure</h2>
-        <p class="text-outline-variant leading-relaxed">
-            From custom 1U rackmount builds to local-first mTLS topologies. Documenting the journey of shifting from cloud-dependency to a robust, self-hosted smart home environment.
+        <span class="text-[#38bdf8] font-mono text-xs tracking-widest uppercase">[STRATEGY]</span>
+        <h2 class="text-3xl font-bold text-white mt-2 mb-4">Browse Enterprise Blueprints</h2>
+        <p class="text-[#94a3b8] text-lg leading-relaxed">
+            Non-technical strategic guides on digital culture, vendor procurement, and driving organizational change.
         </p>
-    </article>
+    </div>
 
-    <!-- Section 2: Community & Local Projects (Replacement for the 'Corporate' section) -->
-    <article class="bg-surface-container rounded-2xl p-6 border border-outline-variant/20 hover:border-secondary/50 transition-colors">
-        <div class="mb-6 overflow-hidden rounded-xl bg-surface-container-high h-48 flex items-center justify-center">
-            <span class="text-outline-variant italic">// Community Topology Map</span>
+    <!-- INFRASTRUCTURE LAB SECTION -->
+    <div class="group bg-[#0f172a] border border-[#1e293b] rounded-lg p-8 transition-all hover:border-[#334155]">
+        <div class="mb-6 rounded overflow-hidden">
+            <!-- Using your specific asset -->
+            <img src="Lab.png" alt="Infrastructure Lab" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity">
         </div>
-        <span class="text-xs font-bold text-secondary tracking-widest uppercase mb-2 block">[COMMUNITY]</span>
-        <h2 class="text-2xl font-bold mb-3">Glyncorrwg Initiatives</h2>
-        <p class="text-outline-variant leading-relaxed">
-            Developing digital platforms to support local initiatives and news. A focus on accessible, community-owned infrastructure to help publicize local events and strengthen engagement.
-        </p>
-    </article>
+        <div class="flex justify-between items-center">
+            <div>
+                <span class="text-[#fbbf24] font-mono text-xs tracking-widest uppercase">[THE LAB]</span>
+                <h2 class="text-3xl font-bold text-white mt-2 mb-4">Enter the Infrastructure Lab</h2>
+                <p class="text-[#94a3b8] text-lg leading-relaxed">
+                    Deep dives into hardware builds, smart home automation, and local-first networking.
+                </p>
+            </div>
+            <span class="text-[#475569] text-2xl group-hover:text-white transition-colors">→</span>
+        </div>
+    </div>
 
 </section>
 
+        
         <!-- PROJECT SPOTLIGHT -->
         <section class="py-16 md:py-section-gap border-b border-outline-variant/15">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
