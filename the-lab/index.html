@@ -4,98 +4,73 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>THE LAB | PROPSTACK /_</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
     <script src="header.js" defer></script>
     <script src="footer.js" defer></script>
-
-    <script id="tailwind-config">
-        tailwind.config = { darkMode: "class", theme: { extend: { /* ... existing config ... */ } } }
-    </script>
-    <style>
-        body { background-color: #091421; color: #d9e3f6; scroll-behavior: smooth; }
-        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
-        .bento-item { background: #0b0f19; border: 1px solid rgba(144, 144, 150, 0.15); transition: all 0.3s ease; }
-        .bento-item:hover { border-color: rgba(195, 198, 212, 0.3); background: #121c2a; }
-        .code-block { font-family: 'JetBrains Mono', monospace; background: #050f1c; border-left: 2px solid #adc6ff; }
-    </style>
 </head>
 
-<body class="font-body-md text-body-md">
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
 
-    <main-header active="lab"></main-header>
+    <main-header></main-header>
 
     <main class="max-w-container-max mx-auto px-gutter py-section-gap">
         
         <section class="mb-section-gap">
-            <div class="flex flex-col gap-4">
-                <div class="font-label-mono text-xs text-tertiary uppercase tracking-widest">[ ENV_CORE // LAB_V4.2 ]</div>
-                <h1 class="font-display-xl text-5xl md:text-6xl font-bold tracking-tighter leading-none">
-                    Infrastructure Lab
-                </h1>
-                <p class="font-body-lg text-lg text-outline max-w-2xl">
-                    Clinical-grade documentation for the local-first automation stack. From Shelly relay orchestration to bare-metal Proxmox clusters.
-                </p>
+            <div class="flex flex-col gap-4 border-l-2 border-primary pl-8">
+                <div class="font-label-mono text-xs text-primary uppercase tracking-[0.2em]">[ ENVIRONMENT_CONTROL_V4.2 ]</div>
+                <h1 class="font-display-xl text-5xl md:text-6xl font-bold tracking-tighter">Infrastructure Lab</h1>
+                <p class="font-body-lg text-outline max-w-2xl">Clinical sandbox for edge engineering. Documentation of physical builds, MQTT relay orchestration, and local-first automation stacks.</p>
             </div>
         </section>
 
-        <div class="bento-grid">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-stack-gap">
             
-            <div class="bento-item col-span-12 md:col-span-8 p-8 flex flex-col justify-between group">
-                <div class="flex flex-col gap-6">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="font-label-mono text-[10px] text-outline uppercase block">Primary Component</span>
-                            <h2 class="text-2xl font-bold">Shelly Pro Integration</h2>
-                        </div>
-                        <span class="font-label-mono text-xs bg-surface-container-high px-2 py-1 text-tertiary">[ MQTT_READY ]</span>
+            <div class="md:col-span-4 bg-surface-container-low border border-outline-variant/20 p-8 flex flex-col gap-6">
+                <span class="font-label-mono text-xs text-outline uppercase tracking-widest">Global Node Status</span>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
+                        <span class="text-sm font-medium">Shelly Relay Mesh</span>
+                        <span class="text-tertiary font-mono text-sm">24/24 ONLINE</span>
                     </div>
-                    <div class="aspect-video bg-surface-container-lowest flex items-center justify-center border border-outline-variant/10">
-                        <span class="text-outline-variant font-label-mono text-sm">[ IMAGE: LAB_SHELLY_SETUP.PNG ]</span>
+                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
+                        <span class="text-sm font-medium">MQTT Broker</span>
+                        <span class="text-tertiary font-mono text-sm">LATENCY: 4ms</span>
                     </div>
-                    <p class="text-on-surface-variant">Standardizing the home power grid using Shelly Pro DIN-rail mounts. Hardwired, local-first, and zero-cloud dependency.</p>
+                    <div class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
+                        <span class="text-sm font-medium">Edge Compute</span>
+                        <span class="text-tertiary font-mono text-sm">34°C / NOMINAL</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col gap-6">
-                <span class="font-label-mono text-[10px] text-outline uppercase">Node Topology</span>
-                <div class="space-y-4">
-                    <div class="flex justify-between border-b border-outline-variant/10 pb-2">
-                        <span class="text-sm">Shelly Relays</span>
-                        <span class="text-tertiary font-mono">18 Online</span>
-                    </div>
-                    <div class="flex justify-between border-b border-outline-variant/10 pb-2">
-                        <span class="text-sm">Home Assistant</span>
-                        <span class="text-tertiary font-mono">v2026.6</span>
-                    </div>
-                    <div class="flex justify-between border-b border-outline-variant/10 pb-2">
-                        <span class="text-sm">Uptime</span>
-                        <span class="text-tertiary font-mono">99.99%</span>
-                    </div>
+            <div class="md:col-span-8 bg-surface-container-low border border-outline-variant/20 overflow-hidden flex flex-col group">
+                <div class="h-64 bg-surface-container relative">
+                    <img src="https://raw.githubusercontent.com/jezza10d/propstack/main/assets/Lab.png" alt="Lab Hardware" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-700">
+                </div>
+                <div class="p-8">
+                    <span class="font-label-mono text-xs text-primary uppercase block mb-2">[PROJECT_01] Bare-Metal Relay Control</span>
+                    <h2 class="text-2xl font-bold mb-4">Shelly Pro Integration Log</h2>
+                    <p class="text-outline">Deep dive into local Zigbee/MQTT relay integration for high-density residential automation. Focus on zero-cloud latency.</p>
                 </div>
             </div>
-            
-            <div class="bento-item col-span-12 md:col-span-12 p-8 grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">YAML Configuration</h3>
-                    <p class="text-outline text-sm">Example MQTT payload configuration for multi-stage relay sequencing. Minimal latency achieved via local static IP binding.</p>
+
+            <div class="md:col-span-12 bg-surface-container-lowest border border-outline-variant/20 p-8 grid md:grid-cols-2 gap-8">
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-xl font-bold mb-4">Edge Infrastructure Config</h3>
+                    <p class="text-outline text-sm">Every lab log includes the raw configuration state. Reproducible, documented, and resilient.</p>
                 </div>
-                <div class="code-block p-4 overflow-x-auto text-xs text-tertiary">
-                    <pre><code>shelly_relay_01:
+                <div class="font-mono text-xs bg-[#050f1c] p-6 border-l-2 border-tertiary text-tertiary overflow-x-auto">
+                    <pre><code># Shelly Pro configuration via MQTT
+shelly_01:
   platform: mqtt
-  command_topic: "shellies/relay/set"
-  payload_on: "on"
-  payload_off: "off"
-  qos: 1</code></pre>
+  state_topic: "shellies/relay01/status"
+  command_topic: "shellies/relay01/set"
+  qos: 1
+  retain: true</code></pre>
                 </div>
             </div>
         </div>
-
     </main>
 
     <main-footer></main-footer>
-
 </body>
 </html>
