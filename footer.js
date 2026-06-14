@@ -5,7 +5,7 @@ class MainFooter extends HTMLElement {
                 <div class="max-w-container-max mx-auto px-5 md:px-gutter flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-gap">
                     <div class="flex flex-col gap-4">
                         <div class="font-headline-md text-headline-md text-on-surface opacity-50 font-bold tracking-tighter">PROPSTACK /_</div>
-                        <p class="font-label-mono text-label-mono uppercase text-outline">© 2026 PROPSTACK /_ TECHNOLOGY JOURNAL. ALL RIGHTS RESERVED.</p>
+                        <p class="font-label-mono text-label-mono uppercase text-outline">© 2026 THEPROPSTACK /_ TECHNOLOGY JOURNAL. ALL RIGHTS RESERVED.</p>
                     </div>
                     <div class="flex flex-wrap gap-8">
                         <a class="font-label-mono text-label-mono uppercase text-outline hover:text-on-surface transition-colors" href="#">Privacy</a>
