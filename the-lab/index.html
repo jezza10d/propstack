@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE LAB | PROPSTACK /_</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#004395",
+                    "secondary-fixed": "#e2e2e2",
+                    "outline": "#909096",
+                    "primary-container": "#0b0f19",
+                    "surface-variant": "#2b3544",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-secondary-container": "#b4b5b5",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "on-secondary": "#2f3131",
+                    "on-error-container": "#ffdad6",
+                    "primary": "#c3c6d4",
+                    "on-tertiary-fixed": "#001a42",
+                    "surface-tint": "#c3c6d4",
+                    "surface-dim": "#091421",
+                    "on-primary": "#2c303b",
+                    "secondary": "#c6c6c7",
+                    "on-tertiary": "#002e6a",
+                    "surface": "#091421",
+                    "primary-fixed": "#dfe2f1",
+                    "inverse-primary": "#5a5e6a",
+                    "tertiary-container": "#000e2a",
+                    "on-background": "#d9e3f6",
+                    "surface-container-low": "#121c2a",
+                    "on-primary-fixed": "#171b26",
+                    "outline-variant": "#46464c",
+                    "error-container": "#93000a",
+                    "tertiary": "#adc6ff",
+                    "surface-bright": "#303a48",
+                    "secondary-container": "#454747",
+                    "inverse-surface": "#d9e3f6",
+                    "surface-container-lowest": "#050f1c",
+                    "surface-container": "#16202e",
+                    "on-surface": "#d9e3f6",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface-container-highest": "#2b3544",
+                    "on-surface-variant": "#c6c6cc",
+                    "on-error": "#690005",
+                    "surface-container-high": "#212b39",
+                    "on-primary-fixed-variant": "#434652",
+                    "background": "#091421",
+                    "on-secondary-fixed-variant": "#454747",
+                    "inverse-on-surface": "#27313f",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#2d78ec",
+                    "primary-fixed-dim": "#c3c6d4",
+                    "tertiary-fixed": "#d8e2ff",
+                    "on-primary-container": "#787b88"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "gutter": "32px",
+                    "stack-gap": "24px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-md": ["Inter"],
+                    "display-xl-mobile": ["Inter"],
+                    "caption": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-xl": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #091421;
+            color: #d9e3f6;
+            scroll-behavior: smooth;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .bento-item {
+            background: #0b0f19;
+            border: 1px solid rgba(144, 144, 150, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-item:hover {
+            border-color: rgba(144, 144, 150, 0.4);
+            background: #121c2a;
+        }
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            background: #050f1c;
+            border-left: 2px solid #adc6ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background docked full-width top-0 sticky z-50 border-b border-outline-variant/15 h-20 transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">menu</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background">PROPSTACK /_</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Strategy</a>
+<a class="font-label-mono text-label-mono uppercase text-primary border-b-2 border-tertiary pb-1" href="#">The Lab</a>
+<a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#">Reviews</a>
+</nav>
+<div class="font-label-mono text-label-mono uppercase text-primary px-4 py-2 border border-outline-variant/30 hover:bg-on-secondary-fixed-variant/10 cursor-pointer transition-all">
+                [SYSTEM_LOGIN]
+            </div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-section-gap">
+<!-- Hero Header -->
+<section class="mb-section-gap">
+<div class="flex flex-col gap-4">
+<div class="font-label-mono text-label-mono text-tertiary uppercase tracking-widest">[ LAB_ENVIRONMENT_v4.2 ]</div>
+<h1 class="font-display-xl text-display-xl max-w-4xl leading-tight">
+                    The Infrastructure Lab: <span class="text-outline">Iterative, Hands-On Edge Engineering.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                    A clinical sandbox for physical builds, automated systems, and high-density networking experiments. Documentation for the persistent evolution of the PROPSTACK core.
+                </p>
+</div>
+</section>
+<!-- Lab Matrix / Bento Grid -->
+<div class="bento-grid">
+<!-- Project 01: Automated Hidden Door -->
+<div class="bento-item col-span-12 md:col-span-8 p-8 flex flex-col justify-between group">
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline mb-1">PROJECT_01</span>
+<h2 class="font-headline-lg text-headline-lg">Automated Hidden Door</h2>
+</div>
+<div class="flex gap-2">
+<span class="font-label-mono text-label-mono bg-surface-container-high px-2 py-1 rounded text-tertiary">[SHELLY]</span>
+<span class="font-label-mono text-label-mono bg-surface-container-high px-2 py-1 rounded text-tertiary">[MQTT]</span>
+<span class="font-label-mono text-label-mono bg-surface-container-high px-2 py-1 rounded text-tertiary">[HOME ASSISTANT]</span>
+</div>
+</div>
+<div class="aspect-video w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Hardware Engineering Lab" class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A professional engineering workbench in a dark lab setting featuring an automated mechanical assembly. Blue status LEDs illuminate a brushed aluminum motor mount and high-torque actuator. The background is a deep charcoal slate, showing various micro-controllers and electronic components neatly arranged. Professional photography with high-contrast, technical atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8GrBkMzkUEemujb2fMCmCgdl_NZXoYsgw4YBtg9Hsr1cTMW37bpsIAcJO8xUQJiazsbQm8ZQHC3zVMHNIUQ40ITZsaHmdjL2GTJMnDfW3p8Rl8yYCun6FQBvletd_EtW01dYEnl0uXHmslvQhN7Cstdozaelhan7nxP0cmYNyEleRuDvWSchSbeBT1eIy0z8Wl1wc4BnoTjrd4T5KddoUD1vLPT8IWY_ZPoHsvjqfWpPDUMAfpElQKQX8u87_8zsjA0uW-_uxanw"/>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Implementation of a low-latency magnetic latch system integrated with local Zigbee sensors. The build focus was purely on hardware-level reliability and "stealth" operation within a residential frame.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-4 mt-8">
+<button class="bg-primary text-on-primary font-label-mono text-label-mono px-6 py-3 uppercase hover:bg-white transition-colors">
+                        [ Read the Build Journey ]
+                    </button>
+<button class="border border-outline-variant text-on-surface font-label-mono text-label-mono px-6 py-3 uppercase hover:bg-surface-container-high transition-colors">
+                        [ 📋 Copy Raw Code / YAML ]
+                    </button>
+</div>
+</div>
+<!-- Project 02: Node Monitoring -->
+<div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col gap-6">
+<span class="font-label-mono text-label-mono text-outline">STATUS_PANEL</span>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-4">
+<span class="font-label-mono text-label-mono uppercase">Lab Uplink</span>
+<span class="text-tertiary font-label-mono text-label-mono">OPTIMAL_99.9%</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-4">
+<span class="font-label-mono text-label-mono uppercase">Nodes Active</span>
+<span class="text-tertiary font-label-mono text-label-mono">14/14</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-4">
+<span class="font-label-mono text-label-mono uppercase">Thermal Index</span>
+<span class="text-on-surface-variant font-label-mono text-label-mono">34°C AVG</span>
+</div>
+</div>
+<div class="mt-auto">
+
+</div>
+</div>
+<!-- Project 03: 1U Server Assembly -->
+<div class="bento-item col-span-12 md:col-span-4 p-8 flex flex-col group">
+<span class="font-label-mono text-label-mono text-outline mb-4">PROJECT_02</span>
+<h2 class="font-headline-md text-headline-md mb-2">1U Server Assembly</h2>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-mono text-label-mono bg-surface-container-high px-2 py-0.5 rounded text-tertiary">[PROXMOX]</span>
+<span class="font-label-mono text-label-mono bg-surface-container-high px-2 py-0.5 rounded text-tertiary">[ZFS]</span>
+</div>
+<div class="aspect-square w-full mb-6 overflow-hidden">
+<img alt="Server Hardware" class="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-500" data-alt="Top-down close-up shot of a 1U server chassis internal layout. Precision-milled cooling fans in high-visibility black, surrounded by bright silver heat sinks and neat cable management in a dark industrial environment. The lighting is cold and clinical, highlighting the technical complexity and clean engineering aesthetic of the server rack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzwQPbf979J45oGHJoXQIU9jdntCUSuZuUR1FlD2lS8P8e5iKMQ7CR7PSOfvnWzZrH0r6e6FiWWzNJFDhS1QiRfHwJ546TEjqbRsttvzlvJiUjHyz5RCh6NooJsVLNuJhGSjb7A_2SF0_bbYWJJT284-EajlEYtVTOI46lp5Qn9l1qD4lXWFHvMFHDGn56j7RIpDRGbhr4oQa3nWgUGSUCMaUtHV0-t5nESchy_6A3q2Q9xF7vBRlQRRc1PGZSOrTvK5oIB-tKeew"/>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Custom short-depth 1U build optimized for thermal efficiency in non-conditioned environments.
+                </p>
+<div class="mt-auto">
+<button class="w-full text-left font-label-mono text-label-mono text-primary uppercase border-t border-outline-variant/20 pt-4 hover:pl-2 transition-all">
+                        → Inspect Schematics
+                    </button>
+</div>
+</div>
+<!-- Project 04: Edge Node V3 -->
+<div class="bento-item col-span-12 md:col-span-8 p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-label-mono text-outline mb-4">PROJECT_03</span>
+<h2 class="font-headline-md text-headline-md mb-4">Edge Node Cluster V3</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Iterating on the distributed sensor network. Implementing local LLM inference on specialized silicon at the edge. 
+                        </p>
+</div>
+<div class="flex flex-col gap-3 mt-6">
+<span class="font-label-mono text-label-mono bg-surface-container-high px-3 py-1 rounded w-fit text-tertiary">[CUDA_CORE]</span>
+<span class="font-label-mono text-label-mono bg-surface-container-high px-3 py-1 rounded w-fit text-tertiary">[JETSON]</span>
+<span class="font-label-mono text-label-mono bg-surface-container-high px-3 py-1 rounded w-fit text-tertiary">[TENSOR_RT]</span>
+</div>
+</div>
+<div class="code-block p-4 overflow-x-auto text-[13px] leading-relaxed text-tertiary-fixed-dim">
+<pre><code>services:
+  inference_node:
+    image: propstack/edge-v3:latest
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    volumes:
+      - /mnt/weights:/models
+    networks:
+      - internal_mesh</code></pre>
+</div>
+</div>
+</div>
+<!-- Secondary Lab List -->
+<section class="mt-section-gap border-t border-outline-variant/15 pt-12">
+<h3 class="font-headline-md text-headline-md mb-8">Active Lab Logs</h3>
+<div class="flex flex-col">
+<!-- Log Item 1 -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-b border-outline-variant/10 hover:bg-surface-container-low px-4 transition-colors group">
+<div class="flex flex-col md:flex-row md:items-center gap-4">
+<span class="font-label-mono text-label-mono text-outline">2024.11.14</span>
+<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Firmware Optimization: Shelly Pro 4PM Relay Batch</span>
+</div>
+<div class="flex gap-4 items-center mt-4 md:mt-0">
+<span class="font-label-mono text-label-mono text-tertiary">[POWER_MANAGEMENT]</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-b border-outline-variant/10 hover:bg-surface-container-low px-4 transition-colors group">
+<div class="flex flex-col md:flex-row md:items-center gap-4">
+<span class="font-label-mono text-label-mono text-outline">2024.10.28</span>
+<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Migration: SQLite to PostreSQL for Home Analytics</span>
+</div>
+<div class="flex gap-4 items-center mt-4 md:mt-0">
+<span class="font-label-mono text-label-mono text-tertiary">[DATABASE]</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+<!-- Log Item 3 -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-b border-outline-variant/10 hover:bg-surface-container-low px-4 transition-colors group">
+<div class="flex flex-col md:flex-row md:items-center gap-4">
+<span class="font-label-mono text-label-mono text-outline">2024.10.05</span>
+<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Physical Build: Modular Rack-Mount Raspberry Pi 5 Blade</span>
+</div>
+<div class="flex gap-4 items-center mt-4 md:mt-0">
+<span class="font-label-mono text-label-mono text-tertiary">[HARDWARE]</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-background full-width py-section-gap border-t border-outline-variant/15 transition-opacity duration-200">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-gap">
+<div class="flex flex-col gap-2">
+<span class="font-headline-md text-headline-md text-on-surface opacity-50 font-bold tracking-tighter">PROPSTACK /_</span>
+<p class="font-label-mono text-label-mono text-outline">© 2024 PROPSTACK /_ TECHNOLOGY JOURNAL. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap gap-6">
+<a class="font-label-mono text-label-mono uppercase text-outline hover:text-on-surface" href="#">Privacy</a>
+<a class="font-label-mono text-label-mono uppercase text-outline hover:text-on-surface" href="#">Terms</a>
+<a class="font-label-mono text-label-mono uppercase text-primary flex items-center gap-2" href="#">
+<span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
+                    System Status: Optimal
+                </a>
+</div>
+</div>
+</footer>
+<!-- Atmosphere Micro-interaction script -->
+<script>
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            // Subtle parallax for bento items based on mouse position
+            const items = document.querySelectorAll('.bento-item');
+            items.forEach((item, index) => {
+                const shift = (index % 3 + 1) * 2;
+                item.style.transform = `translate(${(x - 0.5) * shift}px, ${(y - 0.5) * shift}px)`;
+            });
+        });
+    </script>
+</body></html>
