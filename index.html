@@ -279,31 +279,34 @@
     </div>
 </section>
         
-        <!-- TWO-PATH NAVIGATION -->
-        <section class="py-12 md:py-20 flex flex-col gap-4 border-b border-outline-variant/15">
-            <a class="group relative overflow-hidden bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4 transition-all hover:bg-surface-container-high active:scale-[0.99]" href="#">
-                <div class="w-full h-32 overflow-hidden rounded-lg mb-2" style="background: #121c2a; display: flex; align-items: center; justify-content: center; color: #46464c;">[STRATEGY_IMAGE_PLACEHOLDER]</div>
-                <div class="flex justify-between items-start">
-                    <span class="font-label-mono text-label-mono text-tertiary uppercase">[STRATEGY]</span>
-                    <span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </div>
-                <div>
-                    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Browse Enterprise Blueprints</h2>
-                    <p class="font-body-md text-body-md text-outline">Non-technical strategic guides on digital culture, vendor procurement, and driving organizational change.</p>
-                </div>
-            </a>
-            <a class="group relative overflow-hidden bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4 transition-all hover:bg-surface-container-high active:scale-[0.99]" href="#">
-                <div class="w-full h-32 overflow-hidden rounded-lg mb-2" style="background: #121c2a; display: flex; align-items: center; justify-content: center; color: #46464c;">[LAB_IMAGE_PLACEHOLDER]</div>
-                <div class="flex justify-between items-start">
-                    <span class="font-label-mono text-label-mono text-tertiary uppercase">[THE LAB]</span>
-                    <span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </div>
-                <div>
-                    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Enter the Infrastructure Lab</h2>
-                    <p class="font-body-md text-body-md text-outline">Deep dives into hardware builds, smart home automation, and local-first networking.</p>
-                </div>
-            </a>
-        </section>
+<!-- THE DUAL-SECTION COMPONENT -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+
+    <!-- Section 1: The Lab (Using your custom image) -->
+    <article class="bg-surface-container rounded-2xl p-6 border border-outline-variant/20 hover:border-primary/50 transition-colors">
+        <div class="mb-6 overflow-hidden rounded-xl bg-black">
+            <img src="assets/Lab.png" alt="Internal 1U rack build and Shelly integration" class="w-full h-auto object-cover opacity-90">
+        </div>
+        <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">[THE LAB]</span>
+        <h2 class="text-2xl font-bold mb-3">Bare-Metal Infrastructure</h2>
+        <p class="text-outline-variant leading-relaxed">
+            From custom 1U rackmount builds to local-first mTLS topologies. Documenting the journey of shifting from cloud-dependency to a robust, self-hosted smart home environment.
+        </p>
+    </article>
+
+    <!-- Section 2: Community & Local Projects (Replacement for the 'Corporate' section) -->
+    <article class="bg-surface-container rounded-2xl p-6 border border-outline-variant/20 hover:border-secondary/50 transition-colors">
+        <div class="mb-6 overflow-hidden rounded-xl bg-surface-container-high h-48 flex items-center justify-center">
+            <span class="text-outline-variant italic">// Community Topology Map</span>
+        </div>
+        <span class="text-xs font-bold text-secondary tracking-widest uppercase mb-2 block">[COMMUNITY]</span>
+        <h2 class="text-2xl font-bold mb-3">Glyncorrwg Initiatives</h2>
+        <p class="text-outline-variant leading-relaxed">
+            Developing digital platforms to support local initiatives and news. A focus on accessible, community-owned infrastructure to help publicize local events and strengthen engagement.
+        </p>
+    </article>
+
+</section>
 
         <!-- PROJECT SPOTLIGHT -->
         <section class="py-16 md:py-section-gap border-b border-outline-variant/15">
