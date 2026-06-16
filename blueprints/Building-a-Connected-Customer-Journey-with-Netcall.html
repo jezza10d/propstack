@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Building a Connected Customer Journey with Netcall // PROPSTACK /_</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Reusable components inherited from the architecture framework -->
+    <script src="../header_6.js" defer></script>
+    <script src="../footer_6.js" defer></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#004395",
+                        "secondary-fixed": "#e2e2e2",
+                        "outline": "#909096",
+                        "primary-container": "#0b0f19",
+                        "surface-variant": "#2b3544",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-secondary-container": "#b4b5b5",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-secondary": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#c3c6d4",
+                        "on-tertiary-fixed": "#001a42",
+                        "surface-tint": "#c3c6d4",
+                        "surface-dim": "#091421",
+                        "on-primary": "#2c303b",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary": "#002e6a",
+                        "surface": "#091421",
+                        "primary-fixed": "#dfe2f1",
+                        "inverse-primary": "#5a5e6a",
+                        "tertiary-container": "#000e2a",
+                        "on-background": "#d9e3f6",
+                        "surface-container-low": "#121c2a",
+                        "on-primary-fixed": "#171b26",
+                        "outline-variant": "#46464c",
+                        "error-container": "#93000a",
+                        "tertiary": "#adc6ff",
+                        "surface-bright": "#303a48",
+                        "secondary-container": "#454747",
+                        "inverse-surface": "#d9e3f6",
+                        "surface-container-lowest": "#050f1c",
+                        "surface-container": "#16202e",
+                        "on-surface": "#d9e3f6",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#2b3544",
+                        "on-surface-variant": "#c6c6cc",
+                        "on-error": "#690005",
+                        "surface-container-high": "#212b39",
+                        "on-primary-fixed-variant": "#434652",
+                        "background": "#091421",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#27313f",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#2d78ec",
+                        "primary-fixed-dim": "#c3c6d4",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-primary-container": "#787b88"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "32px",
+                        "stack-gap": "24px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #091421;
+            color: #d9e3f6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::selection {
+            background-color: #adc6ff;
+            color: #000e2a;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md min-h-screen">
+
+<!-- Global navigation context matching index_6.html -->
+<main-header></main-header>
+
+<main class="max-w-container-max mx-auto px-5 md:px-gutter py-section-gap">
+    
+    <article class="w-full">
+        
+        <!-- Breadcrumb / Meta Metadata -->
+        <div class="mb-8">
+            <span class="font-label-mono text-label-mono text-tertiary uppercase">[ PLATFORM REVIEWS ]</span>
+            <span class="font-label-mono text-label-mono text-outline mx-2">/</span>
+            <span class="font-label-mono text-label-mono text-outline uppercase">Enterprise Software Review</span>
+        </div>
+
+        <header class="mb-12">
+            <h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-6">Unlocking the Contact Center: A Review of Netcall and Our Architectural Lessons.</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                What happened when we put Netcall Liberty to the test: assessing deployment ease, data-layer connectivity, and extracting actionable intelligence from the interaction loop.
+            </p>
+            <div class="flex items-center gap-4 mt-8 pt-8 border-t border-outline-variant/15">
+                <div class="flex flex-col">
+                    <span class="font-label-mono text-label-mono text-on-surface">THEPROPSTACK_SYSTEM_LOG</span>
+                    <span class="font-label-mono text-label-mono text-outline">JUNE 14, 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Conceptual Wireframe Component Block -->
+        <div class="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl p-4 md:p-6 mb-12 font-label-mono">
+            <div class="flex justify-between items-center border-b border-outline-variant/15 pb-4 mb-4 text-xs text-outline">
+                <span class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    NETCALL LIBERTY INFRASTRUCTURE // DATA_FLOW
+                </span>
+                <span class="bg-surface-container-high px-2 py-0.5 rounded text-primary text-[10px]">INTEGRATION_ENGINE</span>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                <!-- Left Column: Inbound Event Catching -->
+                <div class="lg:col-span-5 bg-surface-container border border-outline-variant/15 rounded p-4 flex flex-col justify-between min-h-[240px]">
+                    <div>
+                        <div class="text-[10px] text-outline uppercase tracking-wider">// PLATFORM SIMPLICITY</div>
+                        <div class="text-lg text-on-surface font-bold mt-1">Low-Code Logic Blocks</div>
+                        <div class="text-xs text-tertiary mt-1">Zero complex C# or heavy JavaScript overhead required.</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-[10px] text-outline uppercase tracking-wider">// PIPELINE ENDPOINTS</div>
+                        <div class="bg-background/40 p-2 rounded text-xs text-on-surface-variant space-y-1">
+                            <div><span class="text-outline">Webhook Target:</span> REST Node Verified</div>
+                            <div><span class="text-outline">Data Output:</span> Clean JSON Event Stream</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <span class="bg-surface-container-highest text-green-400 text-[10px] px-2 py-1 uppercase rounded font-bold">API Connection Live</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Downstream Destinations -->
+                <div class="lg:col-span-7 bg-background border border-primary/20 rounded flex flex-col overflow-hidden">
+                    <div class="bg-surface-container flex border-b border-outline-variant/15 text-xs">
+                        <div class="px-4 py-2 bg-background border-r border-outline-variant/15 text-primary font-bold flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm">hub</span>
+                            Connected Ecosystem
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-4 text-xs">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <div class="bg-surface-container-low p-3 border border-outline-variant/10 rounded">
+                                <span class="text-outline block text-[10px] uppercase">// DATABASES & CRM</span>
+                                <span class="text-on-surface font-bold block mt-0.5">Bi-Directional Sync</span>
+                                <p class="text-[11px] text-outline mt-1">Instantly feeds profile and interaction variables.</p>
+                            </div>
+                            <div class="bg-surface-container-low p-3 border border-outline-variant/10 rounded">
+                                <span class="text-outline block text-[10px] uppercase">// ANALYTICS INFRASTRUCTURE</span>
+                                <span class="text-on-surface font-bold block mt-0.5">Real-Time Event Streams</span>
+                                <p class="text-[11px] text-outline mt-1">Pushes execution metadata right into operational data stores.</p>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-low p-3 border border-outline-variant/10 rounded">
+                            <span class="text-outline block text-[10px] uppercase">// CORE TAKEAWAY</span>
+                            <span class="text-tertiary font-bold block mt-0.5">The Tech Disappears</span>
+                            <p class="text-[11px] text-on-surface-variant mt-1">Instead of fighting infrastructure, we focus entirely on parsing the insights passing through it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-[10px] text-outline mt-4">// FIG 1.0: Functional Block Representation of Netcall Data-Layer Portability</div>
+        </div>
+
+        <!-- Document Prose Body Structure -->
+        <div class="space-y-stack-gap font-body-lg text-body-lg leading-relaxed text-on-surface/90 max-w-4xl">
+            <p>
+                In our previous transformation logs, we explored why we intentionally bypassed developer-heavy cloud architectures like Amazon Connect in favor of software agility, and how we tackled internal culture roadblocks before they bottlenecked our customer-facing workflows. However, picking a platform is one thing; living with it, deploying it, and getting your data out of it is another. 
+            </p>
+            <p>
+                After embedding <strong>Netcall Liberty</strong> deep within our technology ecosystem, it is time to look back, review the platform critically, and break down what we learned. Contact centers are often treated as closed-loop text and voice utilities. Our goal was different: treat the telephony layer as a dynamic data generation engine that interacts effortlessly with the rest of our environment.
+            </p>
+
+            <hr class="border-outline-variant/15 my-10" />
+
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-12 mb-4">1. Implementation Reality: Speed vs. Complexity</h2>
+            <p>
+                The biggest trap in enterprise communications is the deployment tax. Traditionally, setting up interactive voice menus, conditioning intelligent routing pathways, or configuring agent workspaces requires an army of specialist developers writing custom middleware or fragile backend scripts. 
+            </p>
+            <p>
+                Netcall shifts this paradigm through its low-code interface canvas. Building routing logic and workspace interactions felt less like writing rigid software code and more like structuring modular automated flows. If you have ever used tools like Home Assistant's visual automation editor to connect independent sensors, the logic feels immediately familiar. You drop in an event trigger, assign conditions, map data inputs, and push the workflow live. 
+            </p>
+            <p>
+                We stood up core customer journeys in days rather than quarters. Because the interface relies on clear visual components, the distance between an operational requirement (such as a custom triage route for urgent repairs) and working technical execution drops to near zero.
+            </p>
+
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-12 mb-4">2. The Connectivity Layer: Open Targets over Walled Gardens</h2>
+            <p>
+                A communication hub is only as valuable as its ability to talk to your surrounding software estate. Netcall’s standout strength during our implementation was its lack of developer friction when connecting outward to alternate datasets. 
+            </p>
+            <p>
+                Instead of forcing us into proprietary connector apps or complex authentication wrappers, the system handles external data via straightforward, standard web patterns:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-on-surface-variant">
+                <li><strong>Dynamic REST API Injections:</strong> We can easily trigger lightweight background HTTP queries mid-flight to cross-reference customer numbers against central record tables.</li>
+                <li><strong>JSON Variable Parsing:</strong> The incoming data arrays are parsed instantly into local variables, making it simple to pass customer details, tenancy histories, or priority statuses across active agent screens.</li>
+                <li><strong>Native Webhooks:</strong> Event notifications can be fired outbound to our web services the microsecond a call lands, drops, or transfers.</li>
+            </ul>
+
+            <!-- Technical Integration Mock Block -->
+            <div class="my-10 bg-surface-container-lowest border border-outline-variant/20 overflow-hidden">
+                <div class="flex justify-between items-center px-4 py-2 bg-surface-container border-b border-outline-variant/20">
+                    <span class="font-label-mono text-label-mono text-outline">// netcall_webhook_payload_example.json</span>
+                    <button class="font-label-mono text-label-mono text-primary hover:text-on-surface transition-colors flex items-center gap-1" onclick="copyCode(this)">
+                        <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                        [ 📋 Copy Payload ]
+                    </button>
+                </div>
+                <div class="p-6 overflow-x-auto">
+                    <pre class="font-label-mono text-label-mono leading-relaxed text-on-tertiary-container"><span class="text-outline">{</span>
+  <span class="text-outline">"event_id":</span> "evt_76129845_netcall",
+  <span class="text-outline">"interaction_metadata":</span> {
+    <span class="text-outline">"channel":</span> "voice_inbound",
+    <span class="text-outline">"queue_name":</span> "Complex_Repairs_Triage",
+    <span class="text-outline">"cli_string":</span> "01443450XXX"
+  },
+  <span class="text-outline">"parsed_variables":</span> {
+    <span class="text-outline">"matched_account":</span> "T-908154",
+    <span class="text-outline">"uprn_reference":</span> "10002514309",
+    <span class="text-outline">"balance_state":</span> "clear"
+  },
+  <span class="text-outline">"timestamp_utc":</span> <span class="text-primary">"2026-06-16T16:38:51Z"</span>
+<span class="text-outline">}</span></pre>
+                </div>
+            </div>
+
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-12 mb-4">3. What We Learnt: Data Liberation Changes Everything</h2>
+            <p>
+                When you make an interaction platform easy to deploy and simple to connect, you learn a fundamental truth about enterprise data maturity: <strong>the call history is a golden record of operational health</strong>.
+            </p>
+            <p>
+                Historically, contact center data was locked inside siloed executive summary PDFs—things like average handling time charts or basic abandonment rates. By leveraging Netcall's open architecture, we liberated that data layer. We stopped looking at calls as disconnected audio segments and started looking at them as real-time, event-driven metrics. 
+            </p>
+            <p>
+                Because we could easily pass JSON event packages straight to our analytical storage layers, we began connecting contact center interactions directly to operational outcomes. We can now map call volume spikes accurately against specific local asset failures, trace how changes to our digital forms shift inbound phone queues, and monitor the health of customer journeys end-to-end. 
+            </p>
+
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-12 mb-4">The Final Verdict</h2>
+            <p>
+                Netcall allowed us to step off the continuous developer treadmill. It proved that you don't need sprawling cloud environments or massive engineering teams to build an intelligent, highly responsive communication system. By ensuring deployment remained simple and focusing heavily on how data flows across endpoints, the underlying technology completely fades into the background. The result is a clean, unpolluted view of our information ecosystem—leaving our staff free to focus entirely on delivering a great service.
+            </p>
+        </div>
+
+        <!-- Cross-linking Context Section back to architectural layouts -->
+        <section class="mt-section-gap border-t border-outline-variant/30 pt-16 max-w-4xl">
+            <h3 class="font-label-mono text-label-mono text-outline uppercase tracking-[0.2em] mb-6">Related Platform Logs</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="articletemplate_6.html" class="p-6 bg-surface-container-low border border-outline-variant/15 rounded hover:border-primary/30 transition-colors flex flex-col justify-between">
+                    <div>
+                        <span class="font-label-mono text-xs text-primary block mb-1">[ PREVIOUS ]</span>
+                        <h4 class="font-headline-md text-lg text-on-surface">The Human Factor in Contact Centers</h4>
+                        <p class="text-xs text-outline mt-2">Why we bypassed Amazon Connect and managed the email CC loop challenge.</p>
+                    </div>
+                    <span class="text-xs text-primary font-label-mono mt-4 inline-flex items-center gap-1">Review Framework <span class="material-symbols-outlined text-[12px]">arrow_forward</span></span>
+                </a>
+                <a href="the-lab_6.html" class="p-6 bg-surface-container-low border border-outline-variant/15 rounded hover:border-primary/30 transition-colors flex flex-col justify-between">
+                    <div>
+                        <span class="font-label-mono text-xs text-tertiary block mb-1">[ HARDWARE ]</span>
+                        <h4 class="font-headline-md text-lg text-on-surface">Edge Automation Lab Logs</h4>
+                        <p class="text-xs text-outline mt-2">Connecting local MQTT infrastructure arrays and 1U platform servers.</p>
+                    </div>
+                    <span class="text-xs text-tertiary font-label-mono mt-4 inline-flex items-center gap-1">Inspect Core Lab <span class="material-symbols-outlined text-[12px]">terminal</span></span>
+                </a>
+            </div>
+        </section>
+    </article>
+</main>
+
+<!-- Global layout footer matching index_6.html -->
+<main-footer></main-footer>
+
+<script>
+    function copyCode(button) {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span> [ COPIED! ]';
+        button.classList.add('text-tertiary');
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove('text-tertiary');
+        }, 2000);
+    }
+</script>
+</body>
+</html>
