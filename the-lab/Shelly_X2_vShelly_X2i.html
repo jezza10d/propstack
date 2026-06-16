@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Form vs. Friction: A Brutal Reality Check on the Shelly X2 & X2i // PROPSTACK /_</title>
+    <title>Living with the Shelly X2 & X2i: A Long-Time Tinkerer’s Reality Check // PROPSTACK /_</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -127,19 +127,19 @@
     <article class="w-full">
         
         <div class="mb-8">
-            <span class="font-label-mono text-label-mono text-tertiary uppercase">[ HARWDARE REVIEW ]</span>
+            <span class="font-label-mono text-label-mono text-tertiary uppercase">[ THE LAB ]</span>
             <span class="font-label-mono text-label-mono text-outline mx-2">/</span>
-            <span class="font-label-mono text-label-mono text-outline uppercase">Smart Switches & Interfaces</span>
+            <span class="font-label-mono text-label-mono text-outline uppercase">Edge Hardware Deep-Dive</span>
         </div>
 
         <header class="mb-12">
-            <h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-6">Form vs. Friction: A Real-World Take on the Shelly X2 & X2i.</h1>
+            <h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-6">Form vs. Friction: A Brutal Reality Check on the Shelly X2 & X2i.</h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-                They look flawless on a luxury kitchen wall and integrate cleanly into Home Assistant dashboards. But in the wild, design elegance meets minor physical compromise.
+                From Gen1 relays to premium glass wall panels. Evaluating Shelly's flagships when stripped of Android containers, cloud bloat, and standard dashboard bottlenecks.
             </p>
             <div class="flex items-center gap-4 mt-8 pt-8 border-t border-outline-variant/15">
                 <div class="flex flex-col">
-                    <span class="font-label-mono text-label-mono text-on-surface">PROPSTACK_LABS</span>
+                    <span class="font-label-mono text-label-mono text-on-surface">THEPROPSTACK</span>
                     <span class="font-label-mono text-label-mono text-outline">JUNE 16, 2026</span>
                 </div>
             </div>
@@ -147,80 +147,95 @@
 
         <div class="space-y-stack-gap font-body-lg text-body-lg leading-relaxed text-on-surface/90 max-w-4xl">
             <p>
-                When building a modern infrastructure stack for your home, user interface choices generally split down two paths: tactical utility or high-end aesthetics. The **Shelly X2** and its internal, intelligence-backed counterpart, the **X2i**, explicitly target the design-conscious engineer. Out of the box, they look spectacular—sleek, minimalist glass-front profiles that instantly elevate a blank room into an intentional space.
+                My relationship with Shelly isn’t new. I’ve been close to the brand since the early days of their Gen1 ecosystem, back when the little round, orange <strong>Shelly H&T</strong> (Humidity & Temperature) sensor was the best way to get cheap, local telemetry into a home server. I watched them scale through the classic blue Shelly 1 relays to the Pro series. So when the **Shelly X2** and **X2i** wall switches landed, I wanted them to be the definitive answer to my frontend interface needs.
             </p>
             <p>
-                However, living with automation hardware introduces an entirely different set of variables than simply looking at it. Here is the reality of running the X2 series inside a local-first ecosystem over an extended period.
+                Before this, I had a couple of <strong>Sonoff NSPanel Pro</strong> units floating around the infrastructure. I went down the usual rabbit hole with them: rooting the hardware, flashing Android, stripping background resource hogs, and running custom APKs like <em>Fully Kiosk Browser</em>. They worked fine, but they carried those endless micro-annoyances common with running heavy operating systems on low-tier silicon. 
+            </p>
+            <p>
+                The shift away from the standard Home Assistant companion app over to a <strong>lightweight, local HTML webpage dashboard</strong> cleared out most of that lag. But hardware limitations can't always be patched out in software. Here is how the X2 series actually handles real-world deployment.
             </p>
 
-            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">The First Impression: Visuals and Dashboards</h3>
+            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">Physical Deployment & Proportions</h3>
             <p>
-                From a pure design standpoint, Shelly nailed the physical footprint. They drop smoothly into standard backboxes and flush up cleanly against finished plasterboards or wood cladding. 
+                Let’s look at the physical layout first. Proportionally, the X2 line is a significant upgrade over the smaller, cramped Shelly wall switches. The faceplate presence is cleaner, less industrial, and frames a space properly. 
             </p>
             <p>
-                Where they perform exceptionally well is their relationship with custom frontend platforms. If you pass their local states back to a tailored HTML dashboard or a streamlined **Home Assistant** instance, the response pipelines are immediate. Toggling scenes, firing scripts, and mapping specific relay conditions feel as snappy as any commercial enterprise kit.
+                However, physics always wins when it comes to installation. You will need a **deep back-box** to house these units comfortably, and a **dedicated neutral wire** is non-negotiable. I anticipated this requirement during the infrastructure phase of my recent basement build, ensuring clean, deep boxes and full neutrals were pulled to every node before plastering. 
+            </p>
+            <p>
+                It's worth noting that while the X2 units feature integrated relays and secondary environment sensors, I completely ignore them. Because every light fixture and load in my environment is managed down-line by its own dedicated dimmer module, these premium wall plates exist purely as **networked input controllers**.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
                 <div class="aspect-square bg-surface-container border border-outline-variant/20 relative flex items-center justify-center">
                     <div class="text-center p-4">
-                        <span class="material-symbols-outlined text-outline text-3xl mb-2">grid_view</span>
-                        <div class="font-label-mono text-xs text-on-surface-variant">HTML_DASHBOARD_FEED.PNG</div>
+                        <span class="material-symbols-outlined text-outline text-3xl mb-2">layers</span>
+                        <div class="font-label-mono text-xs text-on-surface-variant">BASEMENT_BACKBOX_DEPTH.JPG</div>
                     </div>
                 </div>
                 <div class="aspect-square bg-surface-container border border-outline-variant/20 relative flex items-center justify-center">
                     <div class="text-center p-4">
-                        <span class="material-symbols-outlined text-outline text-3xl mb-2">toggle_on</span>
-                        <div class="font-label-mono text-xs text-on-surface-variant">SHELLY_X2_PROFILE.JPG</div>
+                        <span class="material-symbols-outlined text-outline text-3xl mb-2">view_quilt</span>
+                        <div class="font-label-mono text-xs text-on-surface-variant">HTML_FRONTEND_RENDER.PNG</div>
                     </div>
                 </div>
             </div>
 
-            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">The Friction: Touch Sensitivity & Day-to-Day Tactility</h3>
+            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">The App Bottleneck: Why the X2i Falters</h3>
             <p>
-                Despite their premium exterior, daily interaction uncovers a fundamental flaw: **touch sensitivity**. 
+                In production, the standard **Shelly X2** performs reasonably well, but the intelligent **X2i** introduces clear frustrations. When forced to interact through the standard Home Assistant dashboard ecosystem, execution feels sluggish—commands feel heavy, and state changes take too long to update on-screen.
             </p>
             <p>
-                Unlike traditional micro-switches or spring-loaded dynamic buttons that provide reliable feedback, the capacitive panels on the X2 lines can feel notably numb. They are simply **not as sensitive as I would like**. If you do not strike the target point dead-center with clean intent, you occasionally find yourself hitting the panel a second time. In high-traffic zones like hallways or kitchens where quick, muscle-memory actions rule, this slight lag in human-to-hardware registry breaks the magic of seamless automation.
+                Worse, treating Home Assistant as a native app shell introduces systemic breaks. Basic notification pipelines—like standard <code>notify.notify</code> actions—frequently fail to resolve correctly within the container. 
+            </p>
+            <blockquote>
+                <strong>The Workaround:</strong> Dropping the native app entirely and running a raw, optimized HTML webpage frontend on the panels stabilizes performance, but it isn't a perfect cure. The experience transitions from "frustrating" to "acceptable," but the underlying hardware still introduces friction.
+            </blockquote>
+            <p>
+                The underlying issue is tactile. The glass capacitive touch response is simply **not as sensitive as it should be**. It feels clumsy to manage in high-velocity zones. If you hit the switch off-center or with a light touch, it occasionally misses the register, requiring a second, deliberate press. For high-end architectural hardware, that tactile hesitation breaks the fluid user experience.
             </p>
 
-            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">The Back-End: Clumsy Configuration Management</h3>
+            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">Funky Routing: The UniFi Protect Doorbell Webhook</h3>
             <p>
-                The second bottleneck is provisioning and scaling. Setting up the initial network bindings and tracking configuration scripts across multiple zones feels **a little clumsy to manage**. 
+                To make these switches pull their weight, you have to look past the default software boundaries and build custom logic loops. One of the cooler automations I’ve engineered bridges my security perimeter straight into the kitchen and hallway panels via local webhooks.
             </p>
             <p>
-                While the standard web interfaces give you deep administrative control over individual IP blocks, handling multiple X2 surfaces simultaneously demands patience. To keep the infrastructure sane, it is highly recommended to immediately offload control patterns away from the onboard software layer and push everything straight to unified, local MQTT logic structures.
+                When someone steps up and presses the **UniFi Protect G4 Doorbell Pro**, a localized automation script intercepts the ring event in Home Assistant. Instead of relying on a standard smart speaker announcement, it fires an instant, low-latency webhook directly to the local IP addresses of the X2 and X2i wall plates. This triggers one of Shelly's native onboard chime sounds directly out of the internal speaker of the switch itself.
             </p>
 
             <div class="my-10 bg-surface-container-lowest border border-outline-variant/20 overflow-hidden">
                 <div class="flex justify-between items-center px-4 py-2 bg-surface-container border-b border-outline-variant/20">
-                    <span class="font-label-mono text-label-mono text-outline">// home_assistant_shelly_x2.yaml</span>
+                    <span class="font-label-mono text-label-mono text-outline">// unifi_doorbell_shelly_webhook.yaml</span>
                     <button class="font-label-mono text-label-mono text-primary hover:text-on-surface transition-colors flex items-center gap-1" onclick="copyCode(this)">
                         <span class="material-symbols-outlined text-[14px]">content_copy</span>
                         [ 📋 Copy Code ]
                     </button>
                 </div>
                 <div class="p-6 overflow-x-auto">
-                    <pre class="font-label-mono text-label-mono leading-relaxed text-on-tertiary-container"><span class="text-outline">mqtt:</span>
-  <span class="text-outline">binary_sensor:</span>
-    <span class="text-outline">- name:</span> "Kitchen Shelly X2 Button 1"
-      <span class="text-outline">state_topic:</span> "shellyx2-kitchen/events/rpc"
-      <span class="text-outline">value_template:</span> "{{ value_json.params['input:0'].state }}"
-      <span class="text-outline">payload_on:</span> true
-      <span class="text-outline">payload_off:</span> false
-      <span class="text-outline">availability_topic:</span> "shellyx2-kitchen/online"
-      <span class="text-outline">payload_available:</span> "true"
-      <span class="text-outline">payload_not_available:</span> "false"
-      <span class="text-outline">device_class:</span> "motion"</pre>
+                    <pre class="font-label-mono text-label-mono leading-relaxed text-on-tertiary-container"><span class="text-outline">alias:</span> "Perimeter: Doorbell Press -> Shelly Wall Chime"
+<span class="text-outline">trigger:</span>
+  <span class="text-outline">- platform:</span> state
+    <span class="text-outline">entity_id:</span> binary_sensor.doorbell_pro_button
+    <span class="text-outline">to:</span> "on"
+<span class="text-outline">action:</span>
+  <span class="text-outline">- parallel:</span>
+      <span class="text-outline">- service:</span> uri_request.post
+        <span class="text-outline">data:</span>
+          <span class="text-outline">url:</span> "http://10.0.30.55/rpc/X2.PlaySound?id=1"
+      <span class="text-outline">- service:</span> uri_request.post
+        <span class="text-outline">data:</span>
+          <span class="text-outline">url:</span> "http://10.0.30.56/rpc/X2i.PlaySound?id=1"
+<span class="text-outline">mode:</span> single</pre>
                 </div>
             </div>
 
-            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">The Propstack Verdict</h3>
+            <h3 class="font-headline-md text-headline-md text-on-surface mt-12 mb-4">The Verdict</h3>
             <p>
-                Are the Shelly X2 and X2i worthy components for your project? **Yes, but under conditions.**
+                The Shelly X2 and X2i occupy a strange middle-ground. They easily beat out the hacked, resource-heavy Sonoff setups once you pair them with a clean HTML frontend. Their physical size is excellent, and if you plan your infrastructure early with deep back-boxes and solid power delivery, they sit neatly in a premium architectural space.
             </p>
             <p>
-                If your goal is architectural sleekness paired with a robust local data dashboard integration, they do exactly what they promise on the box. However, if your home ecosystem requires snappy, unthinking touch accuracy from every occupant without UI friction, you should carefully weigh their clumsy management tools and dull sensitivity profile before rolling them out house-wide.
+                But they require you to design around their flaws. If you rely on native Home Assistant app dashboards or expect highly sensitive touch response from a casual tap, their clumsy interface characteristics will show up quickly. Treat them purely as local, scriptable webhook targets and custom HTML web view windows, and they become a solid, if slightly stubborn, piece of edge gear.
             </p>
         </div>
 
@@ -242,20 +257,20 @@
             <div class="space-y-0 border-b border-outline-variant/15">
                 <div class="py-8 border-t border-outline-variant/15 flex gap-6 group hover:bg-surface-container-lowest/30 transition-colors px-4 -mx-4">
                     <div class="w-10 h-10 bg-surface-container-highest flex-shrink-0 flex items-center justify-center border border-outline-variant/20">
-                        <span class="material-symbols-outlined text-outline">tune</span>
+                        <span class="material-symbols-outlined text-outline">hardware</span>
                     </div>
                     <div class="flex-grow">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="font-label-mono text-label-mono text-on-surface">SYS_INTEGRATOR_99</span>
+                            <span class="font-label-mono text-label-mono text-on-surface">EDGE_CORE_USER</span>
                             <span class="text-outline/30 font-label-mono text-[10px]">•</span>
-                            <span class="font-label-mono text-label-mono text-outline">Just now</span>
+                            <span class="font-label-mono text-label-mono text-outline">2m ago</span>
                         </div>
                         <p class="text-on-surface-variant font-body-md mb-4">
-                            Have you experimented with modifying the script poll frequencies or setting custom input debounce rates inside the Shelly console to counteract that touch numbness? Or is it purely a glass-thickness issue?
+                            Are you hitting the Shelly RPC endpoints directly via raw HTTP commands from Home Assistant, or are you pushing those UniFi triggers through an intermediate MQTT bridge to minimize the lag on the chime sound?
                         </p>
                         <div class="flex items-center gap-6">
                             <button class="flex items-center gap-1 font-label-mono text-label-mono text-outline hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined text-[16px]">expand_less</span> 0
+                                <span class="material-symbols-outlined text-[16px]">expand_less</span> 2
                             </button>
                             <button class="flex items-center gap-1 font-label-mono text-label-mono text-outline hover:text-primary transition-colors">
                                 <span class="material-symbols-outlined text-[16px]">reply</span> REPLY
