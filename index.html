@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>PROPSTACK /_ | Technology Journal</title>
+    <title>PROPSTACK /_ | Technology Strategy &amp; Infrastructure Journal</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
+    <!-- REUSABLE COMPONENTS -->
     <script src="header.js" defer></script>
     <script src="footer.js" defer></script>
 
@@ -118,129 +119,141 @@
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden">
 
+    <!-- GLOBAL DYNAMIC HEADER COMPONENT -->
     <main-header></main-header>
 
     <main class="max-w-screen-xl mx-auto px-5 md:px-gutter">
+        
+        <!-- HERO SECTION: STRATEGIC INFRASTRUCTURE CONSOLE -->
         <section class="relative min-h-[60vh] flex items-center border-b border-outline-variant/20 overflow-hidden py-16 md:py-24">
             
+            <!-- Background Shader Layer -->
             <div class="absolute inset-0 -z-10 opacity-60">
                 <div style="display:block;width:100%;height:100%;">
                     <canvas id="shader-canvas-ANIMATION_13" style="display:block;width:100%;height:100%"></canvas>
                 </div>
             </div>
 
+            <!-- Main Content Container Grid -->
             <div class="w-full max-w-container-max mx-auto px-5 md:px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
+                <!-- Left Column: Vision & Value Proposition -->
                 <div class="lg:col-span-7 flex flex-col gap-6">
                     <div class="flex items-center gap-2 text-primary font-label-mono text-xs uppercase tracking-widest">
                         <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                        LIVE CORE_JOURNAL // VER_2026.06
+                        STRATEGIC INTEL // CORE INDEX
                     </div>
                     
                     <h1 class="font-display-xl-mobile text-display-xl-mobile md:text-5xl lg:text-6xl tracking-tighter text-on-surface font-bold leading-tight">
-                        Real-World Technology for Modern Housing &amp; Infrastructure.
+                        Bridging Enterprise Transformation with High-Performance Automation.
                     </h1>
                     
                     <p class="font-body-lg text-body-lg text-outline max-w-xl">
-                        A strategic notebook bridging enterprise transformation in social housing with hands-on, local-first automation engineering.
+                        An executive notebook detailing technology strategy, data maturity, and business transformation within social housing, alongside hands-on local-first systems engineering.
                     </p>
 
+                    <!-- Action Navigation Controls -->
                     <div class="flex flex-wrap gap-4 mt-4">
                         <a href="/the-lab" class="font-label-mono text-label-mono uppercase bg-primary text-on-primary px-6 py-4 hover:bg-on-background transition-all rounded active:scale-95 flex items-center gap-3">
-                            [INITIALIZE_THE_LAB] 
+                            [EXPLORE_THE_LAB] 
                             <span class="material-symbols-outlined text-sm">terminal</span>
                         </a>
-                        <a href="#strategy" class="font-label-mono text-label-mono uppercase border border-outline-variant text-on-surface hover:border-on-surface px-6 py-4 transition-all rounded active:scale-95 flex items-center gap-3">
-                            [VIEW_STRATEGY_BLUEPRINTS]
+                        <a href="/blueprints" class="font-label-mono text-label-mono uppercase border border-outline-variant text-on-surface hover:border-on-surface px-6 py-4 transition-all rounded active:scale-95 flex items-center gap-3">
+                            [STRATEGY_BLUEPRINTS]
                             <span class="material-symbols-outlined text-sm">layers</span>
                         </a>
                     </div>
                 </div>
 
+                <!-- Right Column: The Live Dispatch Terminal -->
                 <div class="lg:col-span-5 bg-surface-container-low/60 backdrop-blur border border-outline-variant/20 rounded-xl p-6 font-label-mono text-sm shadow-2xl relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
                     
                     <div class="flex justify-between items-center border-b border-outline-variant/15 pb-4 mb-4 text-outline text-xs">
                         <span class="flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> 
-                            STREAM_FEED: ACTIVE
+                            JOURNAL_STREAM: LIVE
                         </span>
-                        <span>SYS_LOG_V5</span>
+                        <span>INDEX_V5</span>
                     </div>
 
+                    <!-- Container linked to API (displays top 3 newest entries) -->
                     <div id="sys-log-container" class="flex flex-col gap-3 min-h-[160px] text-on-surface-variant">
-                        <div class="text-xs text-outline">// RECENT TRANSMISSIONS</div>
-                        <div class="text-xs font-label-mono py-4 text-outline/50 animate-pulse">[CONNECTING_TO_STREAM...]</div>
+                        <div class="text-xs text-outline">// RECENT ENTRIES</div>
+                        <div class="text-xs font-label-mono py-4 text-outline/50 animate-pulse">[FETCHING_LATEST_DATA...]</div>
                     </div>
 
-                    <div class="mt-4 pt-4 border-t border-outline-variant/15 flex justify-between items-center text-xs text-outline group-hover:text-on-surface transition-colors">
-                        <span>SYS_LOG_MATRIX</span>
-                        <span class="material-symbols-outlined text-sm animate-bounce-horizontal">arrow_forward</span>
-                    </div>
+                    <a href="/blueprints" class="mt-4 pt-4 border-t border-outline-variant/15 flex justify-between items-center text-xs text-outline group-hover:text-on-surface transition-colors">
+                        <span>VIEW ALL MANAGEMENT INSIGHTS</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
                 </div>
 
             </div>
         </section>
 
+        <!-- OPERATOR PROFILE CONSOLE -->
         <section class="py-10 md:py-14 border-b border-outline-variant/15">
             <div class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6 md:p-8 relative overflow-hidden">
                 
                 <div class="flex justify-between items-center border-b border-outline-variant/15 pb-4 mb-6">
                     <span class="font-label-mono text-xs text-primary uppercase tracking-wider flex items-center gap-2">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> 
-                        [OPERATOR_PROFILE: ARCHITECT_GEN_05]
+                        [OPERATOR_LOG: ARCHITECT_CORE]
                     </span>
-                    <span class="font-label-mono text-[10px] text-outline-variant uppercase">AUTH_VERIFIED</span>
+                    <span class="font-label-mono text-[10px] text-outline-variant uppercase">SYSTEM_VERIFIED</span>
                 </div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     
+                    <!-- Executive Framing Context -->
                     <div class="lg:col-span-7 flex flex-col gap-4">
                         <h2 class="font-display-sm text-2xl md:text-3xl font-bold text-on-surface tracking-tight leading-tight">
-                            An enterprise architect by day, pushing smart infrastructure to its limits by night.
+                            Synthesizing Enterprise Change and High-Fidelity Engineering.
                         </h2>
                         <p class="font-body-md text-sm md:text-base text-outline leading-relaxed">
-                            Behind this project is a builder obsessed with the aggressive crossover between corporate change and bare-metal tinkering. Professionally, the focus is commanding Technology, Data, Software, Development, and Change for a housing association, deploying best-in-class solutions to build exceptional modern services for our customers and colleagues. Personally, that exact same engineering drive is channeled into creating an automated home that fluidly wraps around daily life.
+                            Welcome to <strong>thepropstack</strong>. This space serves as a transparent tactical log written from a dual perspective. Professionally, the lens focuses on commanding Technology, Data, Software Development, and Transformational Change at an executive scale within the housing sector—specifically looking at how organizations deploy modern digital products to design exceptional services for customers and colleagues alike. 
                         </p>
                         <p class="font-body-md text-sm md:text-base text-outline leading-relaxed">
-                            The rule is simple: experiment constantly, prototype fast and cheap, and then upgrade to enterprise-grade execution using rock-solid, <span class="text-primary font-medium font-label-mono text-xs bg-primary/5 px-1.5 py-0.5 rounded">SECURE_BY_DESIGN</span> setups. Whether leading massive digital transformation or wiring local smart relays, success requires working iteratively and taking people on the journey with you, whether that is a corporate boardroom or a partner who holds final domestic sign-off.
+                            Personally, that same operational discipline maps onto high-end local infrastructure, network topologies, and highly responsive home automation ecosystems. The core operating philosophy remains uniform across both environments: **prove the business case through agile, proof-of-concept validation, and scale smoothly into highly secure, resilient, enterprise-grade deployments.** True innovation demands iterative progress, rigorous standard alignment, and driving absolute stakeholder buy-in across every layer.
                         </p>
                     </div>
 
+                    <!-- Strategic Priorities Alignment Matrix -->
                     <div class="lg:col-span-5 bg-background/40 border border-outline-variant/15 rounded-xl p-5 font-label-mono text-xs shadow-inner">
-                        <div class="text-outline text-[10px] uppercase tracking-wider pb-3 border-b border-outline-variant/15">// SYSTEM SIMILARITIES</div>
+                        <div class="text-outline text-[10px] uppercase tracking-wider pb-3 border-b border-outline-variant/15">// PARALLEL OPERATING FRAMEWORK</div>
                         
                         <div class="flex flex-col gap-4 pt-4">
                             <div class="grid grid-cols-2 gap-2 pb-2 border-b border-outline-variant/5">
                                 <div>
-                                    <span class="text-tertiary block text-[10px] uppercase tracking-tight">// THE DAY JOB</span>
-                                    <span class="text-on-surface font-medium">Tech, Data, Software &amp; Change</span>
+                                    <span class="text-tertiary block text-[10px] uppercase tracking-tight">// ENTERPRISE PORTFOLIO</span>
+                                    <span class="text-on-surface font-medium">Tech, Data &amp; Digital Transformation</span>
                                 </div>
                                 <div class="border-l border-outline-variant/10 pl-3">
-                                    <span class="text-primary block text-[10px] uppercase tracking-tight">// THE HOME LAB</span>
-                                    <span class="text-on-surface font-medium">Slick, adaptive home automation</span>
+                                    <span class="text-primary block text-[10px] uppercase tracking-tight">// LAB RESEARCH</span>
+                                    <span class="text-on-surface font-medium">Local-first architecture &amp; automation</span>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-2 gap-2 pb-2 border-b border-outline-variant/5">
                                 <div>
-                                    <span class="text-tertiary block text-[10px] uppercase tracking-tight">// SERVICE DELIVERY</span>
-                                    <span class="text-on-surface font-medium">Best-in-class user systems</span>
+                                    <span class="text-tertiary block text-[10px] uppercase tracking-tight">// DELIVERY MODEL</span>
+                                    <span class="text-on-surface font-medium">User-centric systems design</span>
                                 </div>
                                 <div class="border-l border-outline-variant/10 pl-3">
-                                    <span class="text-primary block text-[10px] uppercase tracking-tight">// BUDGET PHILOSOPHY</span>
-                                    <span class="text-on-surface font-medium">Prototype cheap, enterprise it up</span>
+                                    <span class="text-primary block text-[10px] uppercase tracking-tight">// ARCHITECTURE RULE</span>
+                                    <span class="text-on-surface font-medium">Agile validation, enterprise execution</span>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-2 gap-2">
                                 <div>
-                                    <span class="text-tertiary block text-[10px] uppercase tracking-tight">// TRANSFORMATION</span>
-                                    <span class="text-on-surface font-medium">Iterative change &amp; buy-in</span>
+                                    <span class="text-tertiary block text-[10px] uppercase tracking-tight">// STRATEGY</span>
+                                    <span class="text-on-surface font-medium">Culture shift &amp; broad user buy-in</span>
                                 </div>
                                 <div class="border-l border-outline-variant/10 pl-3">
-                                    <span class="text-primary block text-[10px] uppercase tracking-tight">// ASSURANCE</span>
-                                    <span class="text-on-surface font-medium italic">Partner-approved deployment</span>
+                                    <span class="text-primary block text-[10px] uppercase tracking-tight">// COMPLIANCE</span>
+                                    <span class="text-on-surface font-medium italic">High stability &amp; stakeholder friction-free</span>
                                 </div>
                             </div>
                         </div>
@@ -250,64 +263,73 @@
             </div>
         </section>
         
+        <!-- THE REDIRECT CORES -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap py-section-gap border-b border-outline-variant/15">
             
+            <!-- THE LAB -->
             <a href="/the-lab" class="group flex flex-col border border-outline-variant/20 hover:border-primary/30 bg-surface-container-low transition-all duration-300">
                 <div class="h-64 bg-surface-container overflow-hidden border-b border-outline-variant/15">
                     <img src="https://raw.githubusercontent.com/jezza10d/propstack/main/assets/Lab.png" alt="Infrastructure Lab" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
                 <div class="p-8 flex flex-col gap-3">
-                    <span class="font-label-mono text-xs text-primary uppercase tracking-[0.2em]">[OPERATIONS_LOG]</span>
+                    <span class="font-label-mono text-xs text-primary uppercase tracking-[0.2em]">[THE_LAB]</span>
                     <h2 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Bare-Metal Systems Engineering</h2>
-                    <p class="font-body-md text-body-md text-outline">Deep dives into custom hardware builds, local smart home automation, and resilient mTLS network topologies.</p>
+                    <p class="font-body-md text-body-md text-outline">Granular technical breakdowns targeting multi-node server clusters, isolated mTLS networks, and high-performance smart automation controllers.</p>
                 </div>
             </a>
 
+            <!-- BLUEPRINTS -->
             <a href="/blueprints" class="group flex flex-col border border-outline-variant/20 hover:border-primary/30 bg-surface-container-low transition-all duration-300">
-                <div class="h-64 bg-surface-container flex items-center justify-center text-outline-variant border-b border-outline-variant/15">
-                    [STRATEGY_IMAGE_PLACEHOLDER]
+                <div class="h-64 bg-surface-container flex items-center justify-center text-outline-variant border-b border-outline-variant/15 font-label-mono text-xs uppercase tracking-widest bg-gradient-to-br from-surface-container-low to-background">
+                    [STRATEGY_BLUEPRINTS_CONSOLE]
                 </div>
                 <div class="p-8 flex flex-col gap-3">
-                    <span class="font-label-mono text-xs text-tertiary uppercase tracking-[0.2em]">[STRATEGY]</span>
-                    <h2 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Browse Enterprise Blueprints</h2>
-                    <p class="font-body-md text-body-md text-outline">Non-technical strategic guides on digital culture, vendor procurement, and driving organizational change.</p>
+                    <span class="font-label-mono text-xs text-tertiary uppercase tracking-[0.2em]">[BLUEPRINTS]</span>
+                    <h2 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Enterprise Technology Strategy</h2>
+                    <p class="font-body-md text-body-md text-outline">Executive-level playbooks covering modern data governance frameworks, digital cultural change, vendor management, and operating models.</p>
                 </div>
             </a>
 
         </section>
                 
+        <!-- HIGHLIGHT FEATURE -->
         <section class="py-16 md:py-section-gap border-b border-outline-variant/15">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-7 flex flex-col gap-6">
-                    <span class="font-label-mono text-label-mono text-primary uppercase bg-primary-container px-3 py-1 w-fit">FEATURED PROJECT</span>
-                    <h2 class="font-headline-lg text-headline-lg md:text-5xl md:leading-tight text-on-surface">Project Focus: The Automated Hidden Door</h2>
-                    <p class="font-body-lg text-body-lg text-outline">How I engineered a completely hidden, automated structural door using local-first smart relays—and what it taught me about physical asset security frameworks.</p>
-                    <a class="group flex items-center gap-2 font-label-mono text-label-mono uppercase text-on-surface hover:text-primary transition-colors w-fit" href="/the-lab/automated-hidden-door.html">Read the Technical Log <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">open_in_new</span></a>
+                    <span class="font-label-mono text-label-mono text-primary uppercase bg-primary-container px-3 py-1 w-fit">FEATURED ANALYSIS</span>
+                    <h2 class="font-headline-lg text-headline-lg md:text-5xl md:leading-tight text-on-surface">Physical Assets Meets Digital Infrastructure</h2>
+                    <p class="font-body-lg text-body-lg text-outline">An end-to-end retrospective on building an automated structural access system using local hardware controllers, exploring what real-world installations reveal about physical-to-digital security perimeters.</p>
+                    <a class="group flex items-center gap-2 font-label-mono text-label-mono uppercase text-on-surface hover:text-primary transition-colors w-fit" href="/the-lab/automated-hidden-door.html">Read the Case Study <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">open_in_new</span></a>
                 </div>
                 <div class="md:col-span-5 relative aspect-square bg-surface-container-high border border-outline-variant/30 overflow-hidden">
-                    <div class="w-full h-full" style="background: #16202e; display: flex; align-items: center; justify-content: center; color: #46464c;">[PROJECT_IMAGE_PLACEHOLDER]</div>
+                    <div class="w-full h-full" style="background: #16202e; display: flex; align-items: center; justify-content: center; color: #46464c; font-family: monospace; font-size: 12px;">[INFRASTRUCTURE_RENDER]</div>
                 </div>
             </div>
         </section>
 
+        <!-- EDITORIAL REPOSITORY CHRONOLOGY -->
         <section class="py-16 md:py-section-gap">
             <div class="flex justify-between items-end mb-12">
-                <h3 class="font-label-mono text-label-mono text-outline uppercase tracking-[0.2em]">Latest Entries</h3>
+                <h3 class="font-label-mono text-label-mono text-outline uppercase tracking-[0.2em]">Latest Executive Entries</h3>
                 <div class="h-[1px] flex-grow mx-8 bg-outline-variant/20 mb-2"></div>
             </div>
             
+            <!-- Dynamic Injection Stream Container -->
             <div id="editorial-stream-container" class="flex flex-col">
-                <div class="text-sm font-label-mono py-12 text-outline/40 text-center animate-pulse">[SYNCHRONIZING_ARCHIVE_DATA...]</div>
+                <div class="text-sm font-label-mono py-12 text-outline/40 text-center animate-pulse">[SYNCHRONIZING_CORE_REPOSITORIES...]</div>
             </div>
             
+            <!-- Pagination Wrapper Component -->
             <div id="pagination-btn-wrapper" class="mt-16 flex justify-center hidden">
-                <button id="load-more-button" class="font-label-mono text-label-mono uppercase border border-outline px-10 py-4 hover:bg-on-surface hover:text-background transition-all active:scale-95">View More Articles</button>
+                <button id="load-more-button" class="font-label-mono text-label-mono uppercase border border-outline px-10 py-4 hover:bg-on-surface hover:text-background transition-all active:scale-95">Load More Analyses</button>
             </div>
         </section>
     </main>
 
+    <!-- GLOBAL DYNAMIC FOOTER COMPONENT -->
     <main-footer></main-footer>
 
+    <!-- AUTOMATION CONTROLLER ENGINE -->
     <script>
         let consolidatedArticles = [];
         let currentDisplayedIndex = 3; 
@@ -319,7 +341,7 @@
             return base.charAt(0).toUpperCase() + base.slice(1).replace(/-/g, ' ');
         }
 
-        // Global Intersection Observer Binder Wrapper
+        // Global Intersection Observer Visual Animation Binder
         function attachLayoutFadeObserver() {
             const observer = new IntersectionObserver((entries) => {                
                 entries.forEach(entry => {                    
@@ -335,14 +357,14 @@
             });        
         }
 
-        // Main Requisition Engine Lifecycle
+        // Core Async Platform Processing Engine
         async function fetchSystemJournals() {
             const sysLogContainer = document.getElementById('sys-log-container');
             const streamContainer = document.getElementById('editorial-stream-container');
             const paginationWrapper = document.getElementById('pagination-btn-wrapper');
 
             try {
-                // Parallel async extraction from standard layout streams
+                // Querying both directory trees concurrently
                 const [labResponse, blueprintResponse] = await Promise.all([
                     fetch('https://api.github.com/repos/jezza10d/propstack/contents/the-lab'),
                     fetch('https://api.github.com/repos/jezza10d/propstack/contents/blueprints')
@@ -351,37 +373,37 @@
                 let labData = labResponse.ok ? await labResponse.json() : [];
                 let blueprintData = blueprintResponse.ok ? await blueprintResponse.json() : [];
 
-                // Standardize fields to ensure unified chronological evaluation
+                // Format arrays uniformly for deterministic sorting
                 const cleanLab = Array.isArray(labData) ? labData.filter(f => f.name.endsWith('.html') && f.name !== 'index.html').map(f => ({
                     title: sanitizeDocumentTitle(f.name),
                     url: `/the-lab/${f.name}`,
-                    category: 'LAB LOG',
+                    category: 'THE LAB',
                     colorClass: 'text-primary',
-                    date: f.commit?.author?.date ? new Date(f.commit.author.date) : new Date(),
-                    summary: `Direct operational ledger detailing raw infrastructure execution for ${sanitizeDocumentTitle(f.name)}.`
+                    date: f.commit?.author?.date ? new Date(f.commit.author.date) : new Date(0), // Fallback if meta unavailable
+                    summary: `Technical implementation validation log detailing infrastructure execution paradigms for ${sanitizeDocumentTitle(f.name)}.`
                 })) : [];
 
                 const cleanBlueprints = Array.isArray(blueprintData) ? blueprintData.filter(f => f.name.endsWith('.html') && f.name !== 'index.html').map(f => ({
                     title: sanitizeDocumentTitle(f.name),
                     url: `/blueprints/${f.name}`,
-                    category: 'STRATEGY',
+                    category: 'BLUEPRINT',
                     colorClass: 'text-tertiary',
-                    date: f.commit?.author?.date ? new Date(f.commit.author.date) : new Date(),
-                    summary: `Strategic architectural evaluation framework mapping out macro-level deployment of ${sanitizeDocumentTitle(f.name)}.`
+                    date: f.commit?.author?.date ? new Date(f.commit.author.date) : new Date(0),
+                    summary: `Strategic architectural evaluation framework mapping out scalability, governance, and operating models for ${sanitizeDocumentTitle(f.name)}.`
                 })) : [];
 
-                // Amalgamate and sort raw collections dynamically by dates
+                // STRICT ORDER FIX: Merge arrays and sort sequentially from NEWEST (highest timestamp) to OLDEST (lowest timestamp)
                 consolidatedArticles = [...cleanLab, ...cleanBlueprints].sort((a, b) => b.date - a.date);
 
                 if (consolidatedArticles.length === 0) {
-                    sysLogContainer.innerHTML = '<div class="text-xs text-outline/50">// NO NEW SYSTEM TRANSMISSIONS FOUND</div>';
-                    streamContainer.innerHTML = '<div class="py-12 text-outline/50 font-label-mono text-center">No articles currently published in system indices.</div>';
+                    sysLogContainer.innerHTML = '<div class="text-xs text-outline/50">// NO NEW ENTRIES IN SYSTEM INDEX</div>';
+                    streamContainer.innerHTML = '<div class="py-12 text-outline/50 font-label-mono text-center">No publications registered in system indexes.</div>';
                     return;
                 }
 
-                // 1. RENDER SYS LOG TRANSMISSIONS (Top 3)
+                // 1. POPULATE HERO HEADER LOG WITH TOP 3 NEWEST ENTRIES
                 const sysLogHtml = `
-                    <div class="text-xs text-outline">// RECENT TRANSMISSIONS</div>
+                    <div class="text-xs text-outline">// RECENT DISPATCHES</div>
                     ${consolidatedArticles.slice(0, 3).map(art => `
                         <a href="${art.url}" class="block hover:text-primary transition-colors text-ellipsis overflow-hidden whitespace-nowrap">
                             <span class="${art.colorClass}">[${art.category}]</span> ${art.title}...
@@ -390,27 +412,28 @@
                 `;
                 sysLogContainer.innerHTML = sysLogHtml;
 
-                // 2. RENDER PRIMARY EDITORIAL STREAM (First Initial Slice Block)
+                // 2. RENDER MAIN TIMELINE STREAM BLOCK (Initial slice)
                 renderEditorialBlock(0, currentDisplayedIndex, true);
 
-                // Handle Pagination Visibility States
+                // Initialize control visibility state parameters
                 if (consolidatedArticles.length > currentDisplayedIndex) {
                     paginationWrapper.classList.remove('hidden');
                 }
 
             } catch (error) {
-                console.error('Core Platform Sync Exception:', error);
-                sysLogContainer.innerHTML = '<div class="text-xs text-error">// SYSTEM_SYNC_ERROR: REQUISITION_FAILED</div>';
-                streamContainer.innerHTML = '<div class="py-12 text-error font-label-mono text-center">SYSTEM_CRITICAL: Unified log processing failed to resolve.</div>';
+                console.error('System Data Synchronizer Exception:', error);
+                sysLogContainer.innerHTML = '<div class="text-xs text-error">// CORE_SYNC_FAILURE: FETCH_ABORTED</div>';
+                streamContainer.innerHTML = '<div class="py-12 text-error font-label-mono text-center">CRITICAL ERROR: Failed to reconcile data indexes.</div>';
             }
         }
 
-        // Segmented Append Generator Render Component
+        // Append Engine Block Content Builder Component
         function renderEditorialBlock(startIndex, endIndex, resetContainer = false) {
             const streamContainer = document.getElementById('editorial-stream-container');
             const targetSlice = consolidatedArticles.slice(startIndex, endIndex);
 
             const streamHtml = targetSlice.map((art, index) => {
+                // Ensure a smooth finish at the base of the dynamic lists
                 const borderClass = (startIndex === 0 && index === targetSlice.length - 1 && currentDisplayedIndex >= consolidatedArticles.length) ? '' : 'border-b border-outline-variant/15';
                 return `
                 <article onclick="window.location.href='${art.url}'" class="group py-12 ${borderClass} flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container-low transition-all duration-700 px-4 -mx-4 cursor-pointer opacity-0 translate-y-4">
@@ -427,15 +450,14 @@
             if (resetContainer) {
                 streamContainer.innerHTML = streamHtml;
             } else {
-                // Append next blocks safely preserving native layout stream nodes
                 streamContainer.insertAdjacentHTML('beforeend', streamHtml);
             }
 
-            // Immediately invoke animation listener trigger hooks
+            // Fire observer initialization pipeline hooks asynchronously
             setTimeout(attachLayoutFadeObserver, 50);
         }
 
-        // Attach DOM Events Lifecycle Hooks
+        // Attach Interactive Event Handlers Lifecycle Hooks
         document.addEventListener('DOMContentLoaded', () => {
             fetchSystemJournals();
 
@@ -447,7 +469,6 @@
                     const nextIndex = currentDisplayedIndex + articlesPerPageCount;
                     renderEditorialBlock(currentDisplayedIndex, nextIndex, false);
                     
-                    // Remove dynamic trailing borders on previous nodes to fit layout lines perfectly
                     const remainingArticles = document.querySelectorAll('#editorial-stream-container article');
                     if (remainingArticles.length > 0 && nextIndex >= consolidatedArticles.length) {
                         remainingArticles[remainingArticles.length - 1].classList.remove('border-b', 'border-outline-variant/15');
@@ -455,7 +476,6 @@
 
                     currentDisplayedIndex = nextIndex;
 
-                    // Prune context actions if threshold index boundaries are resolved
                     if (currentDisplayedIndex >= consolidatedArticles.length) {
                         paginationWrapper.classList.add('hidden');
                     }
